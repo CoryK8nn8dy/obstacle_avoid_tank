@@ -22,23 +22,33 @@
 #pragma warning disable 1498
 
 void myTMR0ISR(void);
+void goForward(void);
+void goBackward(void);
+void goCW(void);
+void goCCW(void);
+
 
 //*****************************************************************
 //*****************************************************************
 void main(void) {
     char    cmd;
     uint8_t i;
+    uint8_t motorsToggled = 0;
     
     SYSTEM_Initialize();
+    
+    STBY_SetLow();
+    EPWM1_LoadDutyValue(255);
+    EPWM2_LoadDutyValue(255);
     
     printf("Development Board\r\n");
     printf("Final project terminal \r\n");
     printf("Obstacle-avoiding tank \r\n");   
     printf("\r\n> ");                       // print a nice command prompt
 
-    //TMR0_SetInterruptHandler(myTMR0ISR);    
-    //INTERRUPT_PeripheralInterruptEnable();
-    //INTERRUPT_GlobalInterruptEnable();
+    TMR0_SetInterruptHandler(myTMR0ISR);    
+    INTERRUPT_PeripheralInterruptEnable();
+    INTERRUPT_GlobalInterruptEnable();
                 
 	for(;;) {
 		if (EUSART1_DataReady) {			// wait for incoming data on USART
@@ -54,6 +64,7 @@ void main(void) {
                 printf("o: k\r\n");
                 printf("Z: Reset processor.\r\n");
                 printf("z: Clear the terminal.\r\n");
+                printf("t: Toggle motors.\r\n");
                 printf("-------------------------------------------------\r\n");
 				break;
 
@@ -77,6 +88,25 @@ void main(void) {
             //--------------------------------------------
             case 'z':
                 for (i=0; i<40; i++) printf("\n");
+                break;
+                
+            case 't':
+                if (motorsToggled) {
+                    motorsToggled = 0;
+                    STBY_SetLow();
+                    printf("Motors toggled off.\r\n");
+                } else {
+                    motorsToggled = 1;                    
+                    MOTORA1_SetHigh();
+                    MOTORA2_SetLow();
+                    MOTORB1_SetHigh();
+                    MOTORB2_SetLow();                 
+                    STBY_SetHigh();
+                    EPWM1_LoadDutyValue(128);
+                    EPWM2_LoadDutyValue(128);
+                    printf("Motors toggled on.\r\n");
+                }
+                
                 break;
                 
 			//--------------------------------------------

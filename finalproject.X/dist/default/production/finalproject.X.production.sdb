@@ -43,13 +43,17 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"28 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\main.c
+"28 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"64 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm1.c
+"64 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm1.c
 [v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 1 0 ]
-"64 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm2.c
+"90
+[v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 1 0 ]
+"64 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm2.c
 [v _EPWM2_Initialize EPWM2_Initialize `(v  1 e 1 0 ]
-"66 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/eusart1.c
+"90
+[v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 1 0 ]
+"66 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
 "99
 [v _EUSART1_is_rx_ready EUSART1_is_rx_ready `(a  1 e 1 0 ]
@@ -71,19 +75,19 @@
 [v _EUSART1_SetOverrunErrorHandler EUSART1_SetOverrunErrorHandler `(v  1 e 1 0 ]
 "174
 [v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
-"50 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/mcc.c
+"50 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "63
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"55 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/pin_manager.c
+"55 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"66 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr0.c
+"66 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
-"63 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr1.c
+"63 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 "114
 [v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
-"62 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr2.c
+"62 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 "52 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
 [v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
@@ -125,8 +129,50 @@
 [v _CCPR2H CCPR2H `VEuc  1 e 1 @3944 ]
 "7244
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
+[s S791 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"7271
+[s S800 . 1 `uc 1 LA0 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+`uc 1 LA2 1 0 :1:2 
+`uc 1 LA3 1 0 :1:3 
+`uc 1 LA4 1 0 :1:4 
+`uc 1 LA5 1 0 :1:5 
+`uc 1 LA6 1 0 :1:6 
+`uc 1 LA7 1 0 :1:7 
+]
+[u S809 . 1 `S791 1 . 1 0 `S800 1 . 1 0 ]
+[v _LATAbits LATAbits `VES809  1 e 1 @3977 ]
 "7356
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
+[s S840 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"7383
+[s S849 . 1 `uc 1 LB0 1 0 :1:0 
+`uc 1 LB1 1 0 :1:1 
+`uc 1 LB2 1 0 :1:2 
+`uc 1 LB3 1 0 :1:3 
+`uc 1 LB4 1 0 :1:4 
+`uc 1 LB5 1 0 :1:5 
+`uc 1 LB6 1 0 :1:6 
+`uc 1 LB7 1 0 :1:7 
+]
+[u S858 . 1 `S840 1 . 1 0 `S849 1 . 1 0 ]
+[v _LATBbits LATBbits `VES858  1 e 1 @3978 ]
 "7468
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
 "7580
@@ -396,7 +442,7 @@
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
-"52 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/eusart1.c
+"52 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/eusart1.c
 [u S187 . 1 `S182 1 . 1 0 `uc 1 status 1 0 ]
 [v _eusart1RxLastError eusart1RxLastError `VES187  1 e 1 0 ]
 "58
@@ -405,18 +451,20 @@
 [v _EUSART1_OverrunErrorHandler EUSART1_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "60
 [v _EUSART1_ErrorHandler EUSART1_ErrorHandler `*.37(v  1 e 2 0 ]
-"59 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr0.c
+"59 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr0.c
 [v _timer0ReloadVal timer0ReloadVal `VEus  1 e 2 0 ]
-"57 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr1.c
+"57 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
-"28 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\main.c
+"28 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "30
-[v main@i i `uc  1 a 1 62 ]
+[v main@i i `uc  1 a 1 63 ]
 "29
-[v main@cmd cmd `uc  1 a 1 61 ]
-"92
+[v main@cmd cmd `uc  1 a 1 62 ]
+"31
+[v main@motorsToggled motorsToggled `uc  1 a 1 61 ]
+"117
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -432,9 +480,9 @@
 {
 "1371
 [v vfprintf@cfmt cfmt `*.32uc  1 a 2 49 ]
-[s S821 _IO_FILE 0 ]
+[s S925 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.2S821  1 p 2 43 ]
+[v vfprintf@fp fp `*.2S925  1 p 2 43 ]
 [v vfprintf@fmt fmt `*.32Cuc  1 p 2 45 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 47 ]
 "1382
@@ -444,9 +492,9 @@
 {
 "672
 [v vfpfcnvrt@c c `uc  1 a 1 42 ]
-[s S821 _IO_FILE 0 ]
+[s S925 _IO_FILE 0 ]
 "670
-[v vfpfcnvrt@fp fp `*.2S821  1 p 2 34 ]
+[v vfpfcnvrt@fp fp `*.2S925  1 p 2 34 ]
 [v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 36 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 38 ]
 "1365
@@ -456,9 +504,9 @@
 {
 "261
 [v ctoa@w w `i  1 a 2 32 ]
-[s S821 _IO_FILE 0 ]
+[s S925 _IO_FILE 0 ]
 "259
-[v ctoa@fp fp `*.2S821  1 p 2 29 ]
+[v ctoa@fp fp `*.2S925  1 p 2 29 ]
 [v ctoa@c c `uc  1 p 1 31 ]
 "270
 } 0
@@ -468,9 +516,9 @@
 "74
 [v pad@w w `i  1 a 2 27 ]
 [v pad@i i `i  1 a 2 25 ]
-[s S821 _IO_FILE 0 ]
+[s S925 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.2S821  1 p 2 18 ]
+[v pad@fp fp `*.2S925  1 p 2 18 ]
 [v pad@buf buf `*.39uc  1 p 2 20 ]
 [v pad@p p `i  1 p 2 22 ]
 "95
@@ -493,19 +541,19 @@
 [v fputs@c c `uc  1 a 1 15 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 11 ]
-[s S1318 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.2S1318  1 p 2 13 ]
+[s S1422 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.2S1422  1 p 2 13 ]
 "19
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[s S1318 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.2S1318  1 p 2 4 ]
+[s S1422 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S1422  1 p 2 4 ]
 "21
 } 0
-"146 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/eusart1.c
+"146 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/eusart1.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@txData txData `uc  1 a 1 wreg ]
@@ -522,37 +570,37 @@
 [v EUSART1_Write@txData txData `uc  1 a 1 0 ]
 "139
 } 0
-"50 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/mcc.c
+"50 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "61
 } 0
-"62 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr2.c
+"62 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 {
 "77
 } 0
-"63 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr1.c
+"63 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 {
 "84
 } 0
-"66 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr0.c
+"66 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
 "88
 } 0
-"55 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/pin_manager.c
+"55 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "91
 } 0
-"63 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/mcc.c
+"63 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "71
 } 0
-"66 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/eusart1.c
+"66 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
 {
 "92
@@ -575,17 +623,17 @@
 [v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "176
 } 0
-"64 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm2.c
+"64 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm2.c
 [v _EPWM2_Initialize EPWM2_Initialize `(v  1 e 1 0 ]
 {
 "88
 } 0
-"64 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm1.c
+"64 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm1.c
 [v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 1 0 ]
 {
 "88
 } 0
-"99 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/eusart1.c
+"99 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/eusart1.c
 [v _EUSART1_is_rx_ready EUSART1_is_rx_ready `(a  1 e 1 0 ]
 {
 "102
@@ -594,4 +642,16 @@
 [v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
 {
 "130
+} 0
+"90 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm2.c
+[v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 1 0 ]
+{
+[v EPWM2_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
+"97
+} 0
+"90 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm1.c
+[v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 1 0 ]
+{
+[v EPWM1_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
+"97
 } 0

@@ -9131,9 +9131,9 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 189 "./mcc_generated_files/pin_manager.h"
+# 217 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 201 "./mcc_generated_files/pin_manager.h"
+# 229 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -9515,8 +9515,13 @@ void myTMR0ISR(void);
 void main(void) {
     char cmd;
     uint8_t i;
+    uint8_t motorsToggled = 0;
 
     SYSTEM_Initialize();
+
+    do { LATAbits.LATA0 = 0; } while(0);
+    EPWM1_LoadDutyValue(255);
+    EPWM2_LoadDutyValue(255);
 
     printf("Development Board\r\n");
     printf("Final project terminal \r\n");
@@ -9541,6 +9546,7 @@ void main(void) {
                 printf("o: k\r\n");
                 printf("Z: Reset processor.\r\n");
                 printf("z: Clear the terminal.\r\n");
+                printf("t: Toggle motors.\r\n");
                 printf("-------------------------------------------------\r\n");
     break;
 
@@ -9564,6 +9570,25 @@ void main(void) {
 
             case 'z':
                 for (i=0; i<40; i++) printf("\n");
+                break;
+
+            case 't':
+                if (motorsToggled) {
+                    motorsToggled = 0;
+                    do { LATAbits.LATA0 = 0; } while(0);
+                    printf("Motors toggled off.\r\n");
+                } else {
+                    motorsToggled = 1;
+                    do { LATBbits.LATB6 = 1; } while(0);
+                    do { LATBbits.LATB7 = 0; } while(0);
+                    do { LATBbits.LATB5 = 1; } while(0);
+                    do { LATAbits.LATA1 = 0; } while(0);
+                    do { LATAbits.LATA0 = 1; } while(0);
+                    EPWM1_LoadDutyValue(128);
+                    EPWM2_LoadDutyValue(128);
+                    printf("Motors toggled on.\r\n");
+                }
+
                 break;
 
 
