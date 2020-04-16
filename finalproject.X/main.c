@@ -1,77 +1,95 @@
-/**
-  Generated Main Source File
-
-  Company:
-    Microchip Technology Inc.
-
-  File Name:
-    main.c
-
-  Summary:
-    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
-
-  Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.80.0
-        Device            :  PIC18F26K22
-        Driver Version    :  2.00
-*/
-
-/*
-    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
-    
-    Subject to your compliance with these terms, you may use Microchip software and any 
-    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
-    license terms applicable to your use of third party software (including open source software) that 
-    may accompany Microchip software.
-    
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
-    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
-    FOR A PARTICULAR PURPOSE.
-    
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
-    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
-    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
-    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
-    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
-    SOFTWARE.
-*/
-
+//*****************************************************************
+// Name:    Brennen Ward, Cory Kennedy
+// Date:    Spring 2020
+// Purp:    Final Project - Obstacle Avoiding Tank
+//
+// Assisted: The entire EENG 383 class
+// Assisted by: Technical documents
+//
+// Academic Integrity Statement: I certify that, while others may have
+// assisted me in brain storming, debugging and validating this program,
+// the program itself is my own work. I understand that submitting code
+// which is the work of other individuals is a violation of the course
+// Academic Integrity Policy and may result in a zero credit for the
+// assignment, course failure and a report to the Academic Dishonesty
+// Board. I also understand that if I knowingly give my original work to
+// another individual that it could also result in a zero credit for the
+// assignment, course failure and a report to the Academic Dishonesty
+// Board.
+//*****************************************************************
 #include "mcc_generated_files/mcc.h"
+#pragma warning disable 520     
+#pragma warning disable 1498
 
-/*
-                         Main application
- */
-void main(void)
-{
-    // Initialize the device
+void myTMR0ISR(void);
+
+//*****************************************************************
+//*****************************************************************
+void main(void) {
+    char    cmd;
+    uint8_t i;
+    
     SYSTEM_Initialize();
+    
+    printf("Development Board\r\n");
+    printf("Final project terminal \r\n");
+    printf("Obstacle-avoiding tank \r\n");   
+    printf("\r\n> ");                       // print a nice command prompt
 
-    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
-    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts
-    // Use the following macros to:
-
-    // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
-
-    // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
-
-    // Enable the Peripheral Interrupts
+    //TMR0_SetInterruptHandler(myTMR0ISR);    
     //INTERRUPT_PeripheralInterruptEnable();
+    //INTERRUPT_GlobalInterruptEnable();
+                
+	for(;;) {
+		if (EUSART1_DataReady) {			// wait for incoming data on USART
+            cmd = EUSART1_Read();
+			switch (cmd) {		// and do what it tells you to do
 
-    // Disable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptDisable();
+			//--------------------------------------------
+			// Reply with help menu
+			//--------------------------------------------
+			case '?':
+				printf("-------------------------------------------------\r\n");
+                printf("?: help menu\r\n");
+                printf("o: k\r\n");
+                printf("Z: Reset processor.\r\n");
+                printf("z: Clear the terminal.\r\n");
+                printf("-------------------------------------------------\r\n");
+				break;
 
-    while (1)
-    {
-        // Add your application code
-    }
-}
+            //--------------------------------------------
+            // Reply with "k", used for PC to PIC test
+            //--------------------------------------------
+            case 'o':
+                printf("o:      ok\r\n");
+                break;
+                
+            //--------------------------------------------
+            // Reset the processor after clearing the terminal
+            //--------------------------------------------
+            case 'Z':
+                for (i=0; i<40; i++) printf("\n");
+                RESET();
+                break;
+
+            //--------------------------------------------
+            // Clear the terminal
+            //--------------------------------------------
+            case 'z':
+                for (i=0; i<40; i++) printf("\n");
+                break;
+                
+			//--------------------------------------------
+			// If something unknown is hit, tell user
+			//--------------------------------------------
+			default:
+				printf("Unknown key %c\r\n",cmd);
+				break;
+			} // end switch
+            
+		}	// end if
+    } // end infinite loop    
+} // end main
 /**
  End of File
 */
