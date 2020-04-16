@@ -80,65 +80,53 @@ Version 4.0 HI-TECH Software Intermediate Code
 "236 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 236: void TMR0_WriteTimer(uint16_t timerVal);
 [v _TMR0_WriteTimer `(v ~T0 @X0 0 ef1`us ]
-"6180 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6180:     struct {
-[s S328 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S328 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"6190
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6190:     struct {
-[s S329 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S329 . AN0 AN1 AN2 AN3 . AN4 ]
-"6198
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6198:     struct {
-[s S330 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S330 . C12IN0M C12IN1M C2INP C1INP C1OUT C2OUT ]
-"6206
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6206:     struct {
-[s S331 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S331 . C12IN0N C12IN1N VREFM VREFP T0CKI SS ]
-"6214
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6214:     struct {
-[s S332 :5 `uc 1 :1 `uc 1 ]
-[n S332 . . NOT_SS ]
-"6218
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6218:     struct {
-[s S333 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S333 . . VREFN . SRQ nSS ]
-"6225
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6225:     struct {
-[s S334 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S334 . . CVREF . CCP5 LVDIN ]
-"6232
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6232:     struct {
-[s S335 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S335 . . DACOUT . HLVDIN ]
-"6238
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6238:     struct {
-[s S336 :5 `uc 1 :1 `uc 1 ]
-[n S336 . . SS1 ]
-"6242
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6242:     struct {
-[s S337 :5 `uc 1 :1 `uc 1 ]
-[n S337 . . NOT_SS1 ]
-"6246
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6246:     struct {
-[s S338 :5 `uc 1 :1 `uc 1 ]
-[n S338 . . nSS1 ]
-"6250
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6250:     struct {
-[s S339 :5 `uc 1 :1 `uc 1 ]
-[n S339 . . SRNQ ]
-"6254
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6254:     struct {
-[s S340 :1 `uc 1 :6 `uc 1 :1 `uc 1 ]
-[n S340 . ULPWUIN . RJPU ]
-"6179
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6179: typedef union {
-[u S327 `S328 1 `S329 1 `S330 1 `S331 1 `S332 1 `S333 1 `S334 1 `S335 1 `S336 1 `S337 1 `S338 1 `S339 1 `S340 1 ]
-[n S327 . . . . . . . . . . . . . . ]
-"6260
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6260: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
-[v _PORTAbits `VS327 ~T0 @X0 0 e@3968 ]
+"6471 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6471:     struct {
+[s S342 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S342 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"6481
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6481:     struct {
+[s S343 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S343 . INT0 INT1 INT2 CCP2 KBI0 KBI1 KBI2 KBI3 ]
+"6491
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6491:     struct {
+[s S344 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S344 . AN12 AN10 AN8 AN9 AN11 AN13 TX2 RX2 ]
+"6501
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6501:     struct {
+[s S345 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S345 . FLT0 C12IN3M P1B C12IN2M T5G T1G CK2 DT2 ]
+"6511
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6511:     struct {
+[s S346 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S346 . SRI C12IN3N CTED1 C12IN2N P1D CCP3 PGC PGD ]
+"6521
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6521:     struct {
+[s S347 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S347 . CCP4 P1C SDA2 CTED2 . T3CKI ]
+"6529
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6529:     struct {
+[s S348 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S348 . SS2 SCL2 SDI2 P2A . P3A ]
+"6537
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6537:     struct {
+[s S349 :1 `uc 1 ]
+[n S349 . NOT_SS2 ]
+"6540
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6540:     struct {
+[s S350 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S350 . nSS2 SCK2 . SDO2 . P2B ]
+"6548
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6548:     struct {
+[s S351 :3 `uc 1 :1 `uc 1 ]
+[n S351 . . CCP2_PA2 ]
+"6470
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6470: typedef union {
+[u S341 `S342 1 `S343 1 `S344 1 `S345 1 `S346 1 `S347 1 `S348 1 `S349 1 `S350 1 `S351 1 ]
+[n S341 . . . . . . . . . . . ]
+"6553
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6553: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
+[v _PORTBbits `VS341 ~T0 @X0 0 e@3969 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -1184,7 +1172,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "139
 [e :U 882 ]
 {
-[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
 }
 [e :U 881 ]
 "140
@@ -1198,13 +1186,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "145
 [e :U 886 ]
 {
-[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
+[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
 }
 [e :U 885 ]
 "146
 [e =+ _microSecondDelay -> -> 10 `i `us ]
 "147
-[e $ ! || == -> . . _PORTAbits 0 3 `i -> 1 `i > -> _microSecondDelay `ui -> -> 23500 `i `ui 887  ]
+[e $ ! || == -> . . _PORTBbits 0 0 `i -> 1 `i > -> _microSecondDelay `ui -> -> 23500 `i `ui 887  ]
 {
 "148
 [e = _TMR0ISRstate . `E6151 2 ]

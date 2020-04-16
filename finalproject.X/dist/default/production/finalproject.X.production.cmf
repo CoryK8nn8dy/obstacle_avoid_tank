@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
+$C:\Users\k3nn3\AppData\Local\Temp\sit4.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 3E 3E 4 1
 reset_vec CODE 0 0 0 4 1
@@ -112,7 +112,7 @@ MEDIUMCONST 1000-FE9D 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\finalproject.X.production.o
-8 intcode CODE >10634:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
+8 intcode CODE >10634:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
 8 intcode CODE >58:C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/interrupt_manager.c
 12 intcode CODE >61:C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/interrupt_manager.c
 2E intcode CODE >63:C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/interrupt_manager.c
@@ -446,24 +446,24 @@ F2 text0 CODE >70:C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\main.c
 214 text0 CODE >126:C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\main.c
 226 text0 CODE >127:C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\main.c
 22A text0 CODE >128:C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\main.c
-D78 cinit CODE >5687:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D78 cinit CODE >5689:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D78 cinit CODE >5692:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D78 cinit CODE >5726:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D7C cinit CODE >5727:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D7E cinit CODE >5728:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D7E cinit CODE >5729:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D80 cinit CODE >5730:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D82 cinit CODE >5731:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D84 cinit CODE >5734:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D86 cinit CODE >5735:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D88 cinit CODE >5736:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D8A cinit CODE >5737:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D8C cinit CODE >5743:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D8C cinit CODE >5745:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D8E cinit CODE >5746:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D90 cinit CODE >5747:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
-D92 cinit CODE >5748:C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
+D78 cinit CODE >5687:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D78 cinit CODE >5689:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D78 cinit CODE >5692:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D78 cinit CODE >5726:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D7C cinit CODE >5727:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D7E cinit CODE >5728:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D7E cinit CODE >5729:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D80 cinit CODE >5730:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D82 cinit CODE >5731:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D84 cinit CODE >5734:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D86 cinit CODE >5735:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D88 cinit CODE >5736:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D8A cinit CODE >5737:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D8C cinit CODE >5743:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D8C cinit CODE >5745:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D8E cinit CODE >5746:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D90 cinit CODE >5747:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
+D92 cinit CODE >5748:C:\Users\k3nn3\AppData\Local\Temp\sit4.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -486,7 +486,7 @@ _PWM1CON FB7 0 ABS 0 - dist/default/production\finalproject.X.production.o
 _PWM2CON F65 0 ABS 0 - dist/default/production\finalproject.X.production.o
 EUSART1_SetErrorHandler@interruptHandler 7 0 COMRAM 1 cstackCOMRAM dist/default/production\finalproject.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\finalproject.X.production.o
-__mediumconst FE9E 0 MEDIUMCONST 0 mediumconst C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
+__mediumconst FE9E 0 MEDIUMCONST 0 mediumconst C:\Users\k3nn3\AppData\Local\Temp\sit4.o
 _EUSART1_Initialize B54 0 CODE 0 text22 dist/default/production\finalproject.X.production.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\finalproject.X.production.o
 __end_of_INTERRUPT_Initialize E3A 0 CODE 0 text21 dist/default/production\finalproject.X.production.o
@@ -501,7 +501,7 @@ _LATC F8B 0 ABS 0 - dist/default/production\finalproject.X.production.o
 _TMR1 FCE 0 ABS 0 - dist/default/production\finalproject.X.production.o
 _TMR2 FBC 0 ABS 0 - dist/default/production\finalproject.X.production.o
 _WPUB F61 0 ABS 0 - dist/default/production\finalproject.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
+___sp 0 0 STACK 2 stack C:\Users\k3nn3\AppData\Local\Temp\sit4.o
 _ctoa AB6 0 CODE 0 text7 dist/default/production\finalproject.X.production.o
 _dbuf 6A 0 BANK0 1 bssBANK0 dist/default/production\finalproject.X.production.o
 _main 42 0 CODE 0 text0 dist/default/production\finalproject.X.production.o
@@ -512,7 +512,7 @@ btemp 58 0 COMRAM 1 temp dist/default/production\finalproject.X.production.o
 pad@i 20 0 COMRAM 1 cstackCOMRAM dist/default/production\finalproject.X.production.o
 pad@p 1D 0 COMRAM 1 cstackCOMRAM dist/default/production\finalproject.X.production.o
 pad@w 22 0 COMRAM 1 cstackCOMRAM dist/default/production\finalproject.X.production.o
-start 3E 0 CODE 0 init C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
+start 3E 0 CODE 0 init C:\Users\k3nn3\AppData\Local\Temp\sit4.o
 _TMR0_InterruptHandler A6 0 BANK0 1 nvBANK0 dist/default/production\finalproject.X.production.o
 __end_of_EUSART1_is_rx_ready DDC 0 CODE 0 text28 dist/default/production\finalproject.X.production.o
 __size_of_ctoa 0 0 ABS 0 - dist/default/production\finalproject.X.production.o
@@ -548,11 +548,11 @@ utoa@i 42 0 COMRAM 1 cstackCOMRAM dist/default/production\finalproject.X.product
 utoa@n 3A 0 COMRAM 1 cstackCOMRAM dist/default/production\finalproject.X.production.o
 utoa@p 36 0 COMRAM 1 cstackCOMRAM dist/default/production\finalproject.X.production.o
 utoa@w 38 0 COMRAM 1 cstackCOMRAM dist/default/production\finalproject.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
-intlevel0 0 0 CODE 0 text C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
-intlevel1 0 0 CODE 0 text C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
-intlevel2 0 0 CODE 0 text C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
-intlevel3 0 0 CODE 0 text C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
+__accesstop 60 0 ABS 0 - C:\Users\k3nn3\AppData\Local\Temp\sit4.o
+intlevel0 0 0 CODE 0 text C:\Users\k3nn3\AppData\Local\Temp\sit4.o
+intlevel1 0 0 CODE 0 text C:\Users\k3nn3\AppData\Local\Temp\sit4.o
+intlevel2 0 0 CODE 0 text C:\Users\k3nn3\AppData\Local\Temp\sit4.o
+intlevel3 0 0 CODE 0 text C:\Users\k3nn3\AppData\Local\Temp\sit4.o
 __size_of_EUSART1_SetErrorHandler 0 0 ABS 0 - dist/default/production\finalproject.X.production.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\finalproject.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\finalproject.X.production.o
@@ -573,8 +573,8 @@ _ANSELA F38 0 ABS 0 - dist/default/production\finalproject.X.production.o
 _ANSELB F39 0 ABS 0 - dist/default/production\finalproject.X.production.o
 _ANSELC F3A 0 ABS 0 - dist/default/production\finalproject.X.production.o
 _TMR0_DefaultInterruptHandler E3A 0 CODE 0 text34 dist/default/production\finalproject.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\k3nn3\AppData\Local\Temp\sit4.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\k3nn3\AppData\Local\Temp\sit4.o
 _CCPR1H FBF 0 ABS 0 - dist/default/production\finalproject.X.production.o
 _CCPR1L FBE 0 ABS 0 - dist/default/production\finalproject.X.production.o
 _CCPR2H F68 0 ABS 0 - dist/default/production\finalproject.X.production.o
@@ -669,7 +669,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/default/production\finalproject.X.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/default/production\finalproject.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\finalproject.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\finalproject.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\k3nn3\AppData\Local\Temp\sit4.o
 _BAUDCON1 FB8 0 ABS 0 - dist/default/production\finalproject.X.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\finalproject.X.production.o
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\finalproject.X.production.o
@@ -708,7 +708,7 @@ __Hfarbss 0 0 FARRAM 0 farbss dist/default/production\finalproject.X.production.
 __size_of_EUSART1_SetFramingErrorHandler 0 0 ABS 0 - dist/default/production\finalproject.X.production.o
 __size_of_EUSART1_SetOverrunErrorHandler 0 0 ABS 0 - dist/default/production\finalproject.X.production.o
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\finalproject.X.production.o
-_PORTAbits F80 0 ABS 0 - dist/default/production\finalproject.X.production.o
+_PORTBbits F81 0 ABS 0 - dist/default/production\finalproject.X.production.o
 __CFG_T3CMX$PORTC0 0 0 ABS 0 - dist/default/production\finalproject.X.production.o
 _INTCONbits FF2 0 ABS 0 - dist/default/production\finalproject.X.production.o
 _INTERRUPT_Initialize E36 0 CODE 0 text21 dist/default/production\finalproject.X.production.o
@@ -861,8 +861,8 @@ _TMR0_SetInterruptHandler E04 0 CODE 0 text18 dist/default/production\finalproje
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\finalproject.X.production.o
 __size_of_vfprintf 0 0 ABS 0 - dist/default/production\finalproject.X.production.o
 __end_of_EUSART1_SetFramingErrorHandler E22 0 CODE 0 text24 dist/default/production\finalproject.X.production.o
-stackhi F37 0 ABS 0 - C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
-stacklo AE 0 ABS 0 - C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
+stackhi F37 0 ABS 0 - C:\Users\k3nn3\AppData\Local\Temp\sit4.o
+stacklo AE 0 ABS 0 - C:\Users\k3nn3\AppData\Local\Temp\sit4.o
 __end_of_EUSART1_SetOverrunErrorHandler E18 0 CODE 0 text23 dist/default/production\finalproject.X.production.o
 __end_of_EUSART1_Write DC8 0 CODE 0 text13 dist/default/production\finalproject.X.production.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\finalproject.X.production.o
@@ -950,7 +950,7 @@ __Ltext34 0 0 ABS 0 text34 dist/default/production\finalproject.X.production.o
 __Ltext35 0 0 ABS 0 text35 dist/default/production\finalproject.X.production.o
 __Ltext36 0 0 ABS 0 text36 dist/default/production\finalproject.X.production.o
 __Ltext37 0 0 ABS 0 text37 dist/default/production\finalproject.X.production.o
-__ramtop 1000 0 RAM 0 ramtop C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
+__ramtop 1000 0 RAM 0 ramtop C:\Users\k3nn3\AppData\Local\Temp\sit4.o
 _vfprintf A52 0 CODE 0 text2 dist/default/production\finalproject.X.production.o
 __Lpowerup 3E 0 CODE 0 powerup dist/default/production\finalproject.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\finalproject.X.production.o

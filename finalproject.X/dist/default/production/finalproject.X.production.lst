@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Thu Apr 16 12:53:01 2020
+                                                                                               Thu Apr 16 14:01:13 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F26K22
@@ -138,7 +138,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    124  0000                     _CCPTMRS0bits	set	3913
    125  0000                     _TMR1	set	4046
    126  0000                     _RCONbits	set	4048
-   127  0000                     _PORTAbits	set	3968
+   127  0000                     _PORTBbits	set	3969
    128  0000                     _LATBbits	set	3978
    129  0000                     _LATAbits	set	3977
    130  0000                     _T1GCONbits	set	4044
@@ -3499,12 +3499,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3307  000C9C  0E00               	movlw	0
   3308  000C9E  6E8B               	movwf	139,c	;volatile
   3309                           
-  3310                           ;mcc_generated_files/pin_manager.c: 67:     TRISA = 0xDC;
-  3311  000CA0  0EDC               	movlw	220
+  3310                           ;mcc_generated_files/pin_manager.c: 67:     TRISA = 0xFC;
+  3311  000CA0  0EFC               	movlw	252
   3312  000CA2  6E92               	movwf	146,c	;volatile
   3313                           
-  3314                           ;mcc_generated_files/pin_manager.c: 68:     TRISB = 0x1F;
-  3315  000CA4  0E1F               	movlw	31
+  3314                           ;mcc_generated_files/pin_manager.c: 68:     TRISB = 0x1B;
+  3315  000CA4  0E1B               	movlw	27
   3316  000CA6  6E93               	movwf	147,c	;volatile
   3317                           
   3318                           ;mcc_generated_files/pin_manager.c: 69:     TRISC = 0xB9;
@@ -3516,12 +3516,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3324  000CAE  010F               	movlb	15	; () banked
   3325  000CB0  6F3A               	movwf	58,b	;volatile
   3326                           
-  3327                           ;mcc_generated_files/pin_manager.c: 75:     ANSELB = 0x3F;
-  3328  000CB2  0E3F               	movlw	63
+  3327                           ;mcc_generated_files/pin_manager.c: 75:     ANSELB = 0x3E;
+  3328  000CB2  0E3E               	movlw	62
   3329  000CB4  6F39               	movwf	57,b	;volatile
   3330                           
-  3331                           ;mcc_generated_files/pin_manager.c: 76:     ANSELA = 0x27;
-  3332  000CB6  0E27               	movlw	39
+  3331                           ;mcc_generated_files/pin_manager.c: 76:     ANSELA = 0x2F;
+  3332  000CB6  0E2F               	movlw	47
   3333  000CB8  6F38               	movwf	56,b	;volatile
   3334                           
   3335                           ;mcc_generated_files/pin_manager.c: 81:     WPUB = 0x00;
@@ -4551,7 +4551,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4266                           ;main.c: 136: 
   4267  00090E  EFC3  F004         	goto	i2l2037
   4268  000912                     i2l393:
-  4269  000912  8A89               	bsf	137,5,c	;volatile
+  4269  000912  848A               	bsf	138,2,c	;volatile
   4270  000914  0E01               	movlw	1
   4271  000916  6E54               	movwf	_TMR0ISRstate^0,c
   4272  000918                     i2l2019:
@@ -4562,7 +4562,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4277  000920  EC16  F007         	call	_TMR0_WriteTimer	;wreg free
   4278  000924  EFDC  F004         	goto	i2l395
   4279  000928                     i2l397:
-  4280  000928  9A89               	bcf	137,5,c	;volatile
+  4280  000928  948A               	bcf	138,2,c	;volatile
   4281  00092A  0E0A               	movlw	10
   4282  00092C  0100               	movlb	0	; () banked
   4283  00092E  2768               	addwf	_microSecondDelay& (0+255),f,b
@@ -4570,7 +4570,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4285  000932  2369               	addwfc	(_microSecondDelay+1)& (0+255),f,b
   4286  000934                     
   4287                           ; BSR set to: 0
-  4288  000934  B680               	btfsc	128,3,c	;volatile
+  4288  000934  B081               	btfsc	129,0,c	;volatile
   4289  000936  EF9F  F004         	goto	i2u80_41
   4290  00093A  EFA1  F004         	goto	i2u80_40
   4291  00093E                     i2u80_41:
@@ -4812,7 +4812,7 @@ Pointer List with Targets:
     fputs@fp	PTR struct _IO_FILE size(2) Largest target is 0
 		 -> NULL(NULL[0]), 
 
-    S1775_IO_FILE$buffer	PTR unsigned char  size(2) Largest target is 0
+    S1782_IO_FILE$buffer	PTR unsigned char  size(2) Largest target is 0
 
     fputc@fp.buffer	PTR unsigned char  size(2) Largest target is 0
 
@@ -5300,7 +5300,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Thu Apr 16 12:53:01 2020
+Symbol Table                                                                                   Thu Apr 16 14:01:13 2020
 
                   __size_of_EPWM2_LoadDutyValue 0030                                              l13 0DEA  
                                             l52 0C92                                              l72 0C62  
@@ -5618,7 +5618,7 @@ Symbol Table                                                                    
                          __size_of_EUSART1_Read 0028                                      ??_vfprintf 004E  
                           ??_EUSART1_Initialize 0009                                         strlen@a 0009  
                                        strlen@s 0007                        _TMR0_SetInterruptHandler 0E04  
-                                     _PORTAbits 000F80                __size_of_EUSART1_SetErrorHandler 000A  
+                                     _PORTBbits 000F81                __size_of_EUSART1_SetErrorHandler 000A  
                            EUSART1_Write@txData 0007                           ??_EUSART1_is_rx_ready 0007  
                                   _EUSART1_Read 0CEA                    __end_of_INTERRUPT_Initialize 0E3A  
                                    vfpfcnvrt@ap 0048                                     vfpfcnvrt@fp 0044  

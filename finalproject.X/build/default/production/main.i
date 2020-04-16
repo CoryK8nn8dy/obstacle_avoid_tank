@@ -9131,9 +9131,9 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 217 "./mcc_generated_files/pin_manager.h"
+# 223 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 229 "./mcc_generated_files/pin_manager.h"
+# 235 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -9634,15 +9634,15 @@ void myTMR0ISR(void) {
     switch(TMR0ISRstate) {
 
         case SEND_TRIGGER:
-            do { LATAbits.LATA5 = 1; } while(0);
+            do { LATBbits.LATB2 = 1; } while(0);
             TMR0ISRstate = WAIT_ON_ECHO;
             TMR0_WriteTimer(0x10000 - 10);
             break;
 
         case WAIT_ON_ECHO:
-            do { LATAbits.LATA5 = 0; } while(0);
+            do { LATBbits.LATB2 = 0; } while(0);
             microSecondDelay += 10;
-            if ((PORTAbits.RA3 == 1) || (microSecondDelay > 23500)) {
+            if ((PORTBbits.RB0 == 1) || (microSecondDelay > 23500)) {
                 TMR0ISRstate = ECHO_RECEIVED;
             }
             TMR0_WriteTimer(0x10000 - 10);

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\finalproject.X.production.sym \
   --cmf=dist/default/production\finalproject.X.production.cmf -z -Q18F26K22 \
-  -oC:\Users\k3nn3\AppData\Local\Temp\s2oc.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\k3nn3\AppData\Local\Temp\sit4.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/finalproject.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0AEh-0F37h -pstack=STACK -ACODE=00h-0FFFFh \
   -ACONST=00h-0FFFFh -ASMALLCONST=01000h-010FFhx240 \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\k3nn3\AppData\Local\Temp\s2oc.o \
+  C:\Users\k3nn3\AppData\Local\Temp\sit4.o \
   dist/default/production\finalproject.X.production.o 
 
 Object code version is 3.11
@@ -39,7 +39,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\k3nn3\AppData\Local\Temp\s2oc.o
+C:\Users\k3nn3\AppData\Local\Temp\sit4.o
                 init                                 3E       3E        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -313,7 +313,7 @@ _OSCILLATOR_Initialize                          text20       000DEC
 _OSCTUNE                                        (abs)        000F9B
 _PIN_MANAGER_Initialize                         text19       000C94
 _PIR1bits                                       (abs)        000F9E
-_PORTAbits                                      (abs)        000F80
+_PORTBbits                                      (abs)        000F81
 _PR2                                            (abs)        000FBB
 _PSTR1CON                                       (abs)        000FB9
 _PSTR2CON                                       (abs)        000F63

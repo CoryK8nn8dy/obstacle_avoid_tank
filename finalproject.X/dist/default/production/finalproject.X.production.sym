@@ -222,7 +222,7 @@ __size_of_putch 0 0 ABS 0
 __end_of_EPWM1_LoadDutyValue C94 0 CODE 0
 vfprintf@ap 97 0 BANK0 1
 __end_of_EPWM1_Initialize D78 0 CODE 0
-_PORTAbits F80 0 ABS 0
+_PORTBbits F81 0 ABS 0
 _T0CONbits FD5 0 ABS 0
 _T1CONbits FCD 0 ABS 0
 _T2CONbits FBA 0 ABS 0
@@ -587,7 +587,7 @@ bssBANK0 60 AD BANK0 60 1
 %locals
 dist/default/production\finalproject.X.production.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
-C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
+C:\Users\k3nn3\AppData\Local\Temp\sit4.s
 5687 D78 0 CODE 0
 5689 D78 0 CODE 0
 5692 D78 0 CODE 0
@@ -937,7 +937,7 @@ mcc_generated_files/epwm1.c
 93 C64 0 CODE 0
 96 C7C 0 CODE 0
 97 C92 0 CODE 0
-C:\Users\k3nn3\AppData\Local\Temp\s2oc.s
+C:\Users\k3nn3\AppData\Local\Temp\sit4.s
 10634 8 0 CODE 0
 mcc_generated_files/interrupt_manager.c
 58 8 0 CODE 0

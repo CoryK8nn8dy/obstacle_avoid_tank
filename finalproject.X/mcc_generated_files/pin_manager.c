@@ -64,16 +64,16 @@ void PIN_MANAGER_Initialize(void)
     /**
     TRISx registers
     */
-    TRISA = 0xDC;
-    TRISB = 0x1F;
+    TRISA = 0xFC;
+    TRISB = 0x1B;
     TRISC = 0xB9;
 
     /**
     ANSELx registers
     */
     ANSELC = 0x3C;
-    ANSELB = 0x3F;
-    ANSELA = 0x27;
+    ANSELB = 0x3E;
+    ANSELA = 0x2F;
 
     /**
     WPUx registers
