@@ -9226,8 +9226,14 @@ uint16_t TMR0_ReadTimer(void);
 void TMR0_WriteTimer(uint16_t timerVal);
 # 272 "mcc_generated_files/tmr0.h"
 void TMR0_Reload(void);
-# 310 "mcc_generated_files/tmr0.h"
-_Bool TMR0_HasOverflowOccured(void);
+# 290 "mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 309 "mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 327 "mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 345 "mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
 # 52 "mcc_generated_files/tmr0.c" 2
 
 
@@ -9235,6 +9241,7 @@ _Bool TMR0_HasOverflowOccured(void);
 
 
 
+void (*TMR0_InterruptHandler)(void);
 
 volatile uint16_t timer0ReloadVal;
 
@@ -9251,10 +9258,10 @@ void TMR0_Initialize(void)
     T0CONbits.T08BIT = 0;
 
 
-    TMR0H = 0xFD;
+    TMR0H = 0xFF;
 
 
-    TMR0L = 0x7F;
+    TMR0L = 0xD7;
 
 
 
@@ -9264,7 +9271,13 @@ void TMR0_Initialize(void)
     INTCONbits.TMR0IF = 0;
 
 
-    T0CON = 0x9F;
+    INTCONbits.TMR0IE = 1;
+
+
+    TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
+
+
+    T0CON = 0x93;
 }
 
 void TMR0_StartTimer(void)
@@ -9306,8 +9319,31 @@ void TMR0_Reload(void)
     TMR0L = (uint8_t) timer0ReloadVal;
 }
 
-_Bool TMR0_HasOverflowOccured(void)
+void TMR0_ISR(void)
 {
 
-    return(INTCONbits.TMR0IF);
+
+    INTCONbits.TMR0IF = 0;
+
+
+
+    TMR0H = timer0ReloadVal >> 8;
+    TMR0L = (uint8_t) timer0ReloadVal;
+
+    if(TMR0_InterruptHandler)
+    {
+        TMR0_InterruptHandler();
+    }
+
+
+}
+
+
+void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
+    TMR0_InterruptHandler = InterruptHandler;
+}
+
+void TMR0_DefaultInterruptHandler(void){
+
+
 }

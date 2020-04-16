@@ -9258,19 +9258,24 @@ extern char * cgets(char *);
 extern void cputs(const char *);
 # 54 "mcc_generated_files/mcc.h" 2
 
+# 1 "mcc_generated_files/interrupt_manager.h" 1
+# 110 "mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 55 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/epwm2.h" 1
 # 96 "mcc_generated_files/epwm2.h"
 void EPWM2_Initialize(void);
 # 122 "mcc_generated_files/epwm2.h"
 void EPWM2_LoadDutyValue(uint16_t dutyValue);
-# 55 "mcc_generated_files/mcc.h" 2
+# 56 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/epwm1.h" 1
 # 96 "mcc_generated_files/epwm1.h"
 void EPWM1_Initialize(void);
 # 122 "mcc_generated_files/epwm1.h"
 void EPWM1_LoadDutyValue(uint16_t dutyValue);
-# 56 "mcc_generated_files/mcc.h" 2
+# 57 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/tmr1.h" 1
 # 94 "mcc_generated_files/tmr1.h"
@@ -9291,7 +9296,7 @@ void TMR1_StartSinglePulseAcquisition(void);
 uint8_t TMR1_CheckGateValueStatus(void);
 # 367 "mcc_generated_files/tmr1.h"
 _Bool TMR1_HasOverflowOccured(void);
-# 57 "mcc_generated_files/mcc.h" 2
+# 58 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/tmr2.h" 1
 # 103 "mcc_generated_files/tmr2.h"
@@ -9308,7 +9313,7 @@ void TMR2_WriteTimer(uint8_t timerVal);
 void TMR2_LoadPeriodRegister(uint8_t periodVal);
 # 325 "mcc_generated_files/tmr2.h"
 _Bool TMR2_HasOverflowOccured(void);
-# 58 "mcc_generated_files/mcc.h" 2
+# 59 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/tmr0.h" 1
 # 100 "mcc_generated_files/tmr0.h"
@@ -9323,9 +9328,15 @@ uint16_t TMR0_ReadTimer(void);
 void TMR0_WriteTimer(uint16_t timerVal);
 # 272 "mcc_generated_files/tmr0.h"
 void TMR0_Reload(void);
-# 310 "mcc_generated_files/tmr0.h"
-_Bool TMR0_HasOverflowOccured(void);
-# 59 "mcc_generated_files/mcc.h" 2
+# 290 "mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 309 "mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 327 "mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 345 "mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 60 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/eusart1.h" 1
 # 57 "mcc_generated_files/eusart1.h"
@@ -9498,10 +9509,10 @@ void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 # 398 "mcc_generated_files/eusart1.h"
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
-# 60 "mcc_generated_files/mcc.h" 2
-# 75 "mcc_generated_files/mcc.h"
+# 61 "mcc_generated_files/mcc.h" 2
+# 76 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 88 "mcc_generated_files/mcc.h"
+# 89 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 47 "mcc_generated_files/mcc.c" 2
 
@@ -9510,6 +9521,7 @@ void OSCILLATOR_Initialize(void);
 void SYSTEM_Initialize(void)
 {
 
+    INTERRUPT_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     EPWM2_Initialize();

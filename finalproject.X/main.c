@@ -21,12 +21,17 @@
 #pragma warning disable 520     
 #pragma warning disable 1498
 
+typedef enum  {SEND_TRIGGER, WAIT_ON_ECHO, ECHO_RECEIVED} myISRstates_t;
+myISRstates_t TMR0ISRstate = SEND_TRIGGER;
+
 void myTMR0ISR(void);
 void goForward(void);
 void goBackward(void);
 void goCW(void);
 void goCCW(void);
 
+uint16_t microSecondDelay = 0;
+uint16_t distance;
 
 //*****************************************************************
 //*****************************************************************
@@ -65,6 +70,7 @@ void main(void) {
                 printf("Z: Reset processor.\r\n");
                 printf("z: Clear the terminal.\r\n");
                 printf("t: Toggle motors.\r\n");
+                printf("r: Read rangefinder value.\r\n");
                 printf("-------------------------------------------------\r\n");
 				break;
 
@@ -109,6 +115,10 @@ void main(void) {
                 
                 break;
                 
+            case 'r':
+                printf("Current rangefinder value: %u\r\n", distance);
+                break;
+                
 			//--------------------------------------------
 			// If something unknown is hit, tell user
 			//--------------------------------------------
@@ -119,7 +129,38 @@ void main(void) {
             
 		}	// end if
     } // end infinite loop    
-} // end main
+} // end 
+
+void myTMR0ISR(void) {
+        
+    switch(TMR0ISRstate) {
+        
+        case SEND_TRIGGER:
+            TRIGGER_SetHigh();
+            TMR0ISRstate = WAIT_ON_ECHO;
+            TMR0_WriteTimer(0x10000 - 10); //10 us delay
+            break;
+               
+        case WAIT_ON_ECHO:
+            TRIGGER_SetLow();
+            microSecondDelay += 10;
+            if ((ECHO_GetValue() == 1) || (microSecondDelay > 23500)) {
+                TMR0ISRstate = ECHO_RECEIVED;
+            }
+            TMR0_WriteTimer(0x10000 - 10); //10 us delay
+            break;
+            
+        case ECHO_RECEIVED:
+            distance = microSecondDelay;
+            microSecondDelay = 0;
+            TMR0ISRstate = SEND_TRIGGER;
+            TMR0_WriteTimer(0x10000 - 30000); //30 ms delay to allow echo to go low
+            break;
+    }
+    
+    INTCONbits.TMR0IF = 0;
+}
+
 /**
  End of File
 */
