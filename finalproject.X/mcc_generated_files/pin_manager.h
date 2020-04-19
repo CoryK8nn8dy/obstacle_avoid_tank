@@ -93,23 +93,6 @@
 #define MOTORB2_SetAnalogMode()      do { ANSELAbits.ANSA1 = 1; } while(0)
 #define MOTORB2_SetDigitalMode()     do { ANSELAbits.ANSA1 = 0; } while(0)
 
-// get/set ECHO aliases
-#define ECHO_TRIS                 TRISBbits.TRISB0
-#define ECHO_LAT                  LATBbits.LATB0
-#define ECHO_PORT                 PORTBbits.RB0
-#define ECHO_WPU                  WPUBbits.WPUB0
-#define ECHO_ANS                  ANSELBbits.ANSB0
-#define ECHO_SetHigh()            do { LATBbits.LATB0 = 1; } while(0)
-#define ECHO_SetLow()             do { LATBbits.LATB0 = 0; } while(0)
-#define ECHO_Toggle()             do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0)
-#define ECHO_GetValue()           PORTBbits.RB0
-#define ECHO_SetDigitalInput()    do { TRISBbits.TRISB0 = 1; } while(0)
-#define ECHO_SetDigitalOutput()   do { TRISBbits.TRISB0 = 0; } while(0)
-#define ECHO_SetPullup()          do { WPUBbits.WPUB0 = 1; } while(0)
-#define ECHO_ResetPullup()        do { WPUBbits.WPUB0 = 0; } while(0)
-#define ECHO_SetAnalogMode()      do { ANSELBbits.ANSB0 = 1; } while(0)
-#define ECHO_SetDigitalMode()     do { ANSELBbits.ANSB0 = 0; } while(0)
-
 // get/set TRIGGER aliases
 #define TRIGGER_TRIS                 TRISBbits.TRISB2
 #define TRIGGER_LAT                  LATBbits.LATB2
@@ -126,6 +109,23 @@
 #define TRIGGER_ResetPullup()        do { WPUBbits.WPUB2 = 0; } while(0)
 #define TRIGGER_SetAnalogMode()      do { ANSELBbits.ANSB2 = 1; } while(0)
 #define TRIGGER_SetDigitalMode()     do { ANSELBbits.ANSB2 = 0; } while(0)
+
+// get/set ECHO aliases
+#define ECHO_TRIS                 TRISBbits.TRISB4
+#define ECHO_LAT                  LATBbits.LATB4
+#define ECHO_PORT                 PORTBbits.RB4
+#define ECHO_WPU                  WPUBbits.WPUB4
+#define ECHO_ANS                  ANSELBbits.ANSB4
+#define ECHO_SetHigh()            do { LATBbits.LATB4 = 1; } while(0)
+#define ECHO_SetLow()             do { LATBbits.LATB4 = 0; } while(0)
+#define ECHO_Toggle()             do { LATBbits.LATB4 = ~LATBbits.LATB4; } while(0)
+#define ECHO_GetValue()           PORTBbits.RB4
+#define ECHO_SetDigitalInput()    do { TRISBbits.TRISB4 = 1; } while(0)
+#define ECHO_SetDigitalOutput()   do { TRISBbits.TRISB4 = 0; } while(0)
+#define ECHO_SetPullup()          do { WPUBbits.WPUB4 = 1; } while(0)
+#define ECHO_ResetPullup()        do { WPUBbits.WPUB4 = 0; } while(0)
+#define ECHO_SetAnalogMode()      do { ANSELBbits.ANSB4 = 1; } while(0)
+#define ECHO_SetDigitalMode()     do { ANSELBbits.ANSB4 = 0; } while(0)
 
 // get/set MOTORB1 aliases
 #define MOTORB1_TRIS                 TRISBbits.TRISB5
@@ -233,6 +233,90 @@ void PIN_MANAGER_Initialize (void);
     PIN_MANAGER_IOC();
  */
 void PIN_MANAGER_IOC(void);
+
+
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Interrupt on Change Handler for the IOCB4 pin functionality
+ * @Example
+    IOCB4_ISR();
+ */
+void IOCB4_ISR(void);
+
+/**
+  @Summary
+    Interrupt Handler Setter for IOCB4 pin interrupt-on-change functionality
+
+  @Description
+    Allows selecting an interrupt handler for IOCB4 at application runtime
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    InterruptHandler function pointer.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB4_SetInterruptHandler(MyInterruptHandler);
+
+*/
+void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Dynamic Interrupt Handler for IOCB4 pin
+
+  @Description
+    This is a dynamic interrupt handler to be used together with the IOCB4_SetInterruptHandler() method.
+    This handler is called every time the IOCB4 ISR is executed and allows any function to be registered at runtime.
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB4_SetInterruptHandler(IOCB4_InterruptHandler);
+
+*/
+extern void (*IOCB4_InterruptHandler)(void);
+
+/**
+  @Summary
+    Default Interrupt Handler for IOCB4 pin
+
+  @Description
+    This is a predefined interrupt handler to be used together with the IOCB4_SetInterruptHandler() method.
+    This handler is called every time the IOCB4 ISR is executed. 
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB4_SetInterruptHandler(IOCB4_DefaultInterruptHandler);
+
+*/
+void IOCB4_DefaultInterruptHandler(void);
 
 
 

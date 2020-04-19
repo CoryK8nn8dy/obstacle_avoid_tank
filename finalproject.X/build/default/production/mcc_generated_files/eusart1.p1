@@ -888,11 +888,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/eusart1.c: 77:     TXSTA1 = 0x24;
 [e = _TXSTA1 -> -> 36 `i `uc ]
 "80
-[; ;mcc_generated_files/eusart1.c: 80:     SPBRG1 = 0x19;
-[e = _SPBRG1 -> -> 25 `i `uc ]
+[; ;mcc_generated_files/eusart1.c: 80:     SPBRG1 = 0x82;
+[e = _SPBRG1 -> -> 130 `i `uc ]
 "83
-[; ;mcc_generated_files/eusart1.c: 83:     SPBRGH1 = 0x00;
-[e = _SPBRGH1 -> -> 0 `i `uc ]
+[; ;mcc_generated_files/eusart1.c: 83:     SPBRGH1 = 0x06;
+[e = _SPBRGH1 -> -> 6 `i `uc ]
 "86
 [; ;mcc_generated_files/eusart1.c: 86:     EUSART1_SetFramingErrorHandler(EUSART1_DefaultFramingErrorHandler);
 [e ( _EUSART1_SetFramingErrorHandler (1 &U _EUSART1_DefaultFramingErrorHandler ]

@@ -9140,6 +9140,14 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 void PIN_MANAGER_Initialize (void);
 # 235 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
+# 248 "mcc_generated_files/pin_manager.h"
+void IOCB4_ISR(void);
+# 271 "mcc_generated_files/pin_manager.h"
+void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void));
+# 295 "mcc_generated_files/pin_manager.h"
+extern void (*IOCB4_InterruptHandler)(void);
+# 319 "mcc_generated_files/pin_manager.h"
+void IOCB4_DefaultInterruptHandler(void);
 # 51 "mcc_generated_files/mcc.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
@@ -9329,14 +9337,8 @@ uint16_t TMR0_ReadTimer(void);
 void TMR0_WriteTimer(uint16_t timerVal);
 # 272 "mcc_generated_files/tmr0.h"
 void TMR0_Reload(void);
-# 290 "mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 309 "mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 327 "mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 345 "mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
+# 310 "mcc_generated_files/tmr0.h"
+_Bool TMR0_HasOverflowOccured(void);
 # 60 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/eusart1.h" 1
@@ -9527,9 +9529,9 @@ void INTERRUPT_Initialize (void)
 void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
 {
 
-    if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+    if(INTCONbits.RBIE == 1 && INTCONbits.RBIF == 1)
     {
-        TMR0_ISR();
+        PIN_MANAGER_IOC();
     }
     else
     {

@@ -9252,10 +9252,10 @@ void TMR1_Initialize(void)
     T1GCON = 0x00;
 
 
-    TMR1H = 0x00;
+    TMR1H = 0xFD;
 
 
-    TMR1L = 0x00;
+    TMR1L = 0x80;
 
 
     timer1ReloadVal=TMR1;
@@ -9264,7 +9264,7 @@ void TMR1_Initialize(void)
     PIR1bits.TMR1IF = 0;
 
 
-    T1CON = 0x01;
+    T1CON = 0x41;
 }
 
 void TMR1_StartTimer(void)

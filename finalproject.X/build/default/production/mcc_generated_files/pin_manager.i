@@ -9130,11 +9130,21 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 void PIN_MANAGER_Initialize (void);
 # 235 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
+# 248 "mcc_generated_files/pin_manager.h"
+void IOCB4_ISR(void);
+# 271 "mcc_generated_files/pin_manager.h"
+void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void));
+# 295 "mcc_generated_files/pin_manager.h"
+extern void (*IOCB4_InterruptHandler)(void);
+# 319 "mcc_generated_files/pin_manager.h"
+void IOCB4_DefaultInterruptHandler(void);
 # 49 "mcc_generated_files/pin_manager.c" 2
 
 
 
 
+
+void (*IOCB4_InterruptHandler)(void);
 
 
 void PIN_MANAGER_Initialize(void)
@@ -9157,7 +9167,7 @@ void PIN_MANAGER_Initialize(void)
 
 
     ANSELC = 0x3C;
-    ANSELB = 0x3E;
+    ANSELB = 0x2F;
     ANSELA = 0x2F;
 
 
@@ -9165,11 +9175,61 @@ void PIN_MANAGER_Initialize(void)
 
     WPUB = 0x00;
     INTCON2bits.nRBPU = 1;
-# 91 "mcc_generated_files/pin_manager.c"
+
+
+
+
+
+
+
+    IOCBbits.IOCB4 = 1;
+
+
+
+
+    IOCB4_SetInterruptHandler(IOCB4_DefaultInterruptHandler);
+
+
+    INTCONbits.RBIE = 1;
+
 }
 
 void PIN_MANAGER_IOC(void)
 {
 
+    if(IOCBbits.IOCB4 == 1)
+    {
+        IOCB4_ISR();
+    }
+
     INTCONbits.RBIF = 0;
+}
+
+
+
+
+void IOCB4_ISR(void) {
+
+
+
+
+    if(IOCB4_InterruptHandler)
+    {
+        IOCB4_InterruptHandler();
+    }
+}
+
+
+
+
+void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void)){
+    IOCB4_InterruptHandler = InterruptHandler;
+}
+
+
+
+
+void IOCB4_DefaultInterruptHandler(void){
+
+
 }

@@ -776,8 +776,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _EPWM2_Initialize ]
 [f ]
 "69
-[; ;mcc_generated_files/epwm2.c: 69:  CCP2CON = 0x1C;
-[e = _CCP2CON -> -> 28 `i `uc ]
+[; ;mcc_generated_files/epwm2.c: 69:  CCP2CON = 0x3C;
+[e = _CCP2CON -> -> 60 `i `uc ]
 "72
 [; ;mcc_generated_files/epwm2.c: 72:  ECCP2AS = 0x00;
 [e = _ECCP2AS -> -> 0 `i `uc ]
@@ -791,8 +791,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/epwm2.c: 81:  CCPR2H = 0x00;
 [e = _CCPR2H -> -> 0 `i `uc ]
 "84
-[; ;mcc_generated_files/epwm2.c: 84:  CCPR2L = 0x00;
-[e = _CCPR2L -> -> 0 `i `uc ]
+[; ;mcc_generated_files/epwm2.c: 84:  CCPR2L = 0x7F;
+[e = _CCPR2L -> -> 127 `i `uc ]
 "87
 [; ;mcc_generated_files/epwm2.c: 87:  CCPTMRS0bits.C2TSEL = 0x0;
 [e = . . _CCPTMRS0bits 0 2 -> -> 0 `i `uc ]

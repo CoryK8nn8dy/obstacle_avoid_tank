@@ -83,6 +83,7 @@ void main(void) {
                 printf("z: Clear the terminal.\r\n");
                 printf("t: Toggle motors.\r\n");
                 printf("r: Read rangefinder value.\r\n");
+                printf("c: Test timer period.\r\n");
                 printf("-------------------------------------------------\r\n");
 				break;
 
@@ -128,7 +129,27 @@ void main(void) {
                 break;
                 
             case 'r':
-                    
+                
+                TRIGGER_SetHigh();
+                INTCONbits.TMR0IF = 0;
+                TMR0_WriteTimer(0x10000 - 10);
+                while(INTCONbits.TMR0IF == 0);
+                TRIGGER_SetLow();
+
+                printf("Distance = %u\r\n", distance);
+
+                break;
+                
+            case 'c':
+                printf("Entering for loop...\r\n");
+                for(i = 0; i<316; i++) {
+                    for(j = 0; j<316; j++) {
+                        INTCONbits.TMR0IF = 0;
+                        TMR0_WriteTimer(0x10000 - 10);
+                        while(INTCONbits.TMR0IF == 0);
+                    }
+                } 
+                printf("Exited for loop.\r\n");
                 break;
                 
 			//--------------------------------------------

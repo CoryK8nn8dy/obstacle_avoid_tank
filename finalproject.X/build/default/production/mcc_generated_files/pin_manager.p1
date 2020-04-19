@@ -1,4 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F5727 `(v ~T0 @X0 0 tf ]
 "7244 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 7244: extern volatile unsigned char LATA __attribute__((address(0xF89)));
 [v _LATA `Vuc ~T0 @X0 0 e@3977 ]
@@ -48,7 +49,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16084
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 16084: extern volatile INTCON2bits_t INTCON2bits __attribute__((address(0xFF1)));
 [v _INTCON2bits `VS796 ~T0 @X0 0 e@4081 ]
-"16135
+"2681
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 2681:     struct {
+[s S135 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S135 . . IOCB4 IOCB5 IOCB6 IOCB7 ]
+"2680
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 2680: typedef union {
+[u S134 `S135 1 ]
+[n S134 . . ]
+"2689
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 2689: extern volatile IOCBbits_t IOCBbits __attribute__((address(0xF62)));
+[v _IOCBbits `VS134 ~T0 @X0 0 e@3938 ]
+[v F5720 `(v ~T0 @X0 0 tf ]
+"271 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 271: void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _IOCB4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F5720 ]
+"319
+[; ;mcc_generated_files/pin_manager.h: 319: void IOCB4_DefaultInterruptHandler(void);
+[v _IOCB4_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
+"16135 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 16135:     struct {
 [s S801 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S801 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
@@ -67,6 +86,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16161
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 16161: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS800 ~T0 @X0 0 e@4082 ]
+"248 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 248: void IOCB4_ISR(void);
+[v _IOCB4_ISR `(v ~T0 @X0 0 ef ]
+[v F5732 `(v ~T0 @X0 0 tf ]
+[v F5734 `(v ~T0 @X0 0 tf ]
+[v F5736 `(v ~T0 @X0 0 tf ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -802,63 +827,135 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16609
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 16609: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"55 mcc_generated_files/pin_manager.c
-[; ;mcc_generated_files/pin_manager.c: 55: void PIN_MANAGER_Initialize(void)
+"54 mcc_generated_files/pin_manager.c
+[; ;mcc_generated_files/pin_manager.c: 54: void (*IOCB4_InterruptHandler)(void);
+[v _IOCB4_InterruptHandler `*F5727 ~T0 @X0 1 e ]
+"57
+[; ;mcc_generated_files/pin_manager.c: 57: void PIN_MANAGER_Initialize(void)
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
-"56
-[; ;mcc_generated_files/pin_manager.c: 56: {
+"58
+[; ;mcc_generated_files/pin_manager.c: 58: {
 {
 [e :U _PIN_MANAGER_Initialize ]
 [f ]
-"60
-[; ;mcc_generated_files/pin_manager.c: 60:     LATA = 0x00;
-[e = _LATA -> -> 0 `i `uc ]
-"61
-[; ;mcc_generated_files/pin_manager.c: 61:     LATB = 0x00;
-[e = _LATB -> -> 0 `i `uc ]
 "62
-[; ;mcc_generated_files/pin_manager.c: 62:     LATC = 0x00;
+[; ;mcc_generated_files/pin_manager.c: 62:     LATA = 0x00;
+[e = _LATA -> -> 0 `i `uc ]
+"63
+[; ;mcc_generated_files/pin_manager.c: 63:     LATB = 0x00;
+[e = _LATB -> -> 0 `i `uc ]
+"64
+[; ;mcc_generated_files/pin_manager.c: 64:     LATC = 0x00;
 [e = _LATC -> -> 0 `i `uc ]
-"67
-[; ;mcc_generated_files/pin_manager.c: 67:     TRISA = 0xFC;
-[e = _TRISA -> -> 252 `i `uc ]
-"68
-[; ;mcc_generated_files/pin_manager.c: 68:     TRISB = 0x1B;
-[e = _TRISB -> -> 27 `i `uc ]
 "69
-[; ;mcc_generated_files/pin_manager.c: 69:     TRISC = 0xB9;
+[; ;mcc_generated_files/pin_manager.c: 69:     TRISA = 0xFC;
+[e = _TRISA -> -> 252 `i `uc ]
+"70
+[; ;mcc_generated_files/pin_manager.c: 70:     TRISB = 0x1B;
+[e = _TRISB -> -> 27 `i `uc ]
+"71
+[; ;mcc_generated_files/pin_manager.c: 71:     TRISC = 0xB9;
 [e = _TRISC -> -> 185 `i `uc ]
-"74
-[; ;mcc_generated_files/pin_manager.c: 74:     ANSELC = 0x3C;
-[e = _ANSELC -> -> 60 `i `uc ]
-"75
-[; ;mcc_generated_files/pin_manager.c: 75:     ANSELB = 0x3E;
-[e = _ANSELB -> -> 62 `i `uc ]
 "76
-[; ;mcc_generated_files/pin_manager.c: 76:     ANSELA = 0x2F;
+[; ;mcc_generated_files/pin_manager.c: 76:     ANSELC = 0x3C;
+[e = _ANSELC -> -> 60 `i `uc ]
+"77
+[; ;mcc_generated_files/pin_manager.c: 77:     ANSELB = 0x2F;
+[e = _ANSELB -> -> 47 `i `uc ]
+"78
+[; ;mcc_generated_files/pin_manager.c: 78:     ANSELA = 0x2F;
 [e = _ANSELA -> -> 47 `i `uc ]
-"81
-[; ;mcc_generated_files/pin_manager.c: 81:     WPUB = 0x00;
+"83
+[; ;mcc_generated_files/pin_manager.c: 83:     WPUB = 0x00;
 [e = _WPUB -> -> 0 `i `uc ]
-"82
-[; ;mcc_generated_files/pin_manager.c: 82:     INTCON2bits.nRBPU = 1;
+"84
+[; ;mcc_generated_files/pin_manager.c: 84:     INTCON2bits.nRBPU = 1;
 [e = . . _INTCON2bits 1 7 -> -> 1 `i `uc ]
-"91
-[; ;mcc_generated_files/pin_manager.c: 91: }
+"92
+[; ;mcc_generated_files/pin_manager.c: 92:     IOCBbits.IOCB4 = 1;
+[e = . . _IOCBbits 0 1 -> -> 1 `i `uc ]
+"97
+[; ;mcc_generated_files/pin_manager.c: 97:     IOCB4_SetInterruptHandler(IOCB4_DefaultInterruptHandler);
+[e ( _IOCB4_SetInterruptHandler (1 &U _IOCB4_DefaultInterruptHandler ]
+"100
+[; ;mcc_generated_files/pin_manager.c: 100:     INTCONbits.RBIE = 1;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"102
+[; ;mcc_generated_files/pin_manager.c: 102: }
 [e :UE 829 ]
 }
-"93
-[; ;mcc_generated_files/pin_manager.c: 93: void PIN_MANAGER_IOC(void)
+"104
+[; ;mcc_generated_files/pin_manager.c: 104: void PIN_MANAGER_IOC(void)
 [v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"94
-[; ;mcc_generated_files/pin_manager.c: 94: {
+"105
+[; ;mcc_generated_files/pin_manager.c: 105: {
 {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-"96
-[; ;mcc_generated_files/pin_manager.c: 96:     INTCONbits.RBIF = 0;
+"107
+[; ;mcc_generated_files/pin_manager.c: 107:     if(IOCBbits.IOCB4 == 1)
+[e $ ! == -> . . _IOCBbits 0 1 `i -> 1 `i 831  ]
+"108
+[; ;mcc_generated_files/pin_manager.c: 108:     {
+{
+"109
+[; ;mcc_generated_files/pin_manager.c: 109:         IOCB4_ISR();
+[e ( _IOCB4_ISR ..  ]
+"110
+[; ;mcc_generated_files/pin_manager.c: 110:     }
+}
+[e :U 831 ]
+"112
+[; ;mcc_generated_files/pin_manager.c: 112:     INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"97
-[; ;mcc_generated_files/pin_manager.c: 97: }
+"113
+[; ;mcc_generated_files/pin_manager.c: 113: }
 [e :UE 830 ]
+}
+"118
+[; ;mcc_generated_files/pin_manager.c: 118: void IOCB4_ISR(void) {
+[v _IOCB4_ISR `(v ~T0 @X0 1 ef ]
+{
+[e :U _IOCB4_ISR ]
+[f ]
+"123
+[; ;mcc_generated_files/pin_manager.c: 123:     if(IOCB4_InterruptHandler)
+[e $ ! != _IOCB4_InterruptHandler -> -> 0 `i `*F5732 833  ]
+"124
+[; ;mcc_generated_files/pin_manager.c: 124:     {
+{
+"125
+[; ;mcc_generated_files/pin_manager.c: 125:         IOCB4_InterruptHandler();
+[e ( *U _IOCB4_InterruptHandler ..  ]
+"126
+[; ;mcc_generated_files/pin_manager.c: 126:     }
+}
+[e :U 833 ]
+"127
+[; ;mcc_generated_files/pin_manager.c: 127: }
+[e :UE 832 ]
+}
+"132
+[; ;mcc_generated_files/pin_manager.c: 132: void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void)){
+[v _IOCB4_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F5734 ]
+{
+[e :U _IOCB4_SetInterruptHandler ]
+[v _InterruptHandler `*F5736 ~T0 @X0 1 r1 ]
+[f ]
+"133
+[; ;mcc_generated_files/pin_manager.c: 133:     IOCB4_InterruptHandler = InterruptHandler;
+[e = _IOCB4_InterruptHandler _InterruptHandler ]
+"134
+[; ;mcc_generated_files/pin_manager.c: 134: }
+[e :UE 834 ]
+}
+"139
+[; ;mcc_generated_files/pin_manager.c: 139: void IOCB4_DefaultInterruptHandler(void){
+[v _IOCB4_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
+{
+[e :U _IOCB4_DefaultInterruptHandler ]
+[f ]
+"142
+[; ;mcc_generated_files/pin_manager.c: 142: }
+[e :UE 835 ]
 }

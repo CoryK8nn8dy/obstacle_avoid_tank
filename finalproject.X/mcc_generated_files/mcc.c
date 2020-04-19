@@ -63,12 +63,16 @@ void SYSTEM_Initialize(void)
 
 void OSCILLATOR_Initialize(void)
 {
-    // SCS FOSC; IRCF 1MHz_HFINTOSC/16; IDLEN disabled; 
-    OSCCON = 0x30;
+    // SCS FOSC; IRCF 16MHz_HFINTOSC; IDLEN disabled; 
+    OSCCON = 0x70;
     // PRISD enabled; SOSCGO disabled; MFIOSEL disabled; 
     OSCCON2 = 0x04;
-    // INTSRC disabled; PLLEN disabled; TUN 0; 
-    OSCTUNE = 0x00;
+    // INTSRC disabled; PLLEN enabled; TUN 0; 
+    OSCTUNE = 0x40;
+    // Wait for PLL to stabilize
+    while(PLLRDY == 0)
+    {
+    }
 }
 
 

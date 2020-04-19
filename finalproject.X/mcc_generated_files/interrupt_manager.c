@@ -58,9 +58,9 @@ void  INTERRUPT_Initialize (void)
 void __interrupt() INTERRUPT_InterruptManager (void)
 {
     // interrupt handler
-    if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+    if(INTCONbits.RBIE == 1 && INTCONbits.RBIF == 1)
     {
-        TMR0_ISR();
+        PIN_MANAGER_IOC();
     }
     else
     {

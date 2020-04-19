@@ -9222,7 +9222,7 @@ void EPWM1_Initialize(void)
 
 
 
- CCP1CON = 0x1C;
+ CCP1CON = 0x3C;
 
 
  ECCP1AS = 0x00;
@@ -9237,7 +9237,7 @@ void EPWM1_Initialize(void)
  CCPR1H = 0x00;
 
 
- CCPR1L = 0x00;
+ CCPR1L = 0x7F;
 
 
  CCPTMRS0bits.C1TSEL = 0x0;

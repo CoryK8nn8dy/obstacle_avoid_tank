@@ -9235,7 +9235,7 @@ void TMR2_Initialize(void)
 
 
 
-    PR2 = 0x00;
+    PR2 = 0xFF;
 
 
     TMR2 = 0x00;
@@ -9244,7 +9244,7 @@ void TMR2_Initialize(void)
     PIR1bits.TMR2IF = 0;
 
 
-    T2CON = 0x06;
+    T2CON = 0x04;
 }
 
 void TMR2_StartTimer(void)

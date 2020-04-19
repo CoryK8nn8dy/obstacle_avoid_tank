@@ -9135,6 +9135,14 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 void PIN_MANAGER_Initialize (void);
 # 235 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
+# 248 "./mcc_generated_files/pin_manager.h"
+void IOCB4_ISR(void);
+# 271 "./mcc_generated_files/pin_manager.h"
+void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void));
+# 295 "./mcc_generated_files/pin_manager.h"
+extern void (*IOCB4_InterruptHandler)(void);
+# 319 "./mcc_generated_files/pin_manager.h"
+void IOCB4_DefaultInterruptHandler(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
@@ -9328,14 +9336,8 @@ uint16_t TMR0_ReadTimer(void);
 void TMR0_WriteTimer(uint16_t timerVal);
 # 272 "./mcc_generated_files/tmr0.h"
 void TMR0_Reload(void);
-# 290 "./mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 309 "./mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 327 "./mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 345 "./mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
+# 310 "./mcc_generated_files/tmr0.h"
+_Bool TMR0_HasOverflowOccured(void);
 # 60 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/eusart1.h" 1
@@ -9522,14 +9524,25 @@ void OSCILLATOR_Initialize(void);
 typedef enum {SEND_TRIGGER, WAIT_ON_ECHO, ECHO_RECEIVED} myISRstates_t;
 myISRstates_t TMR0ISRstate = SEND_TRIGGER;
 
-void myTMR0ISR(void);
+
+void microSecondDelay(uint16_t us);
+void milliSecondDelay(uint16_t ms);
+
 void goForward(void);
 void goBackward(void);
 void goCW(void);
 void goCCW(void);
 
-uint16_t microSecondDelay = 0;
+
 uint16_t distance;
+uint16_t start;
+uint16_t end;
+
+uint8_t echo_received = 0;
+
+
+uint16_t i = 0;
+uint16_t j = 0;
 
 
 
@@ -9549,7 +9562,8 @@ void main(void) {
     printf("Obstacle-avoiding tank \r\n");
     printf("\r\n> ");
 
-    TMR0_SetInterruptHandler(myTMR0ISR);
+
+
     (INTCONbits.PEIE = 1);
     (INTCONbits.GIE = 1);
 
@@ -9569,6 +9583,7 @@ void main(void) {
                 printf("z: Clear the terminal.\r\n");
                 printf("t: Toggle motors.\r\n");
                 printf("r: Read rangefinder value.\r\n");
+                printf("c: Test timer period.\r\n");
                 printf("-------------------------------------------------\r\n");
     break;
 
@@ -9614,7 +9629,27 @@ void main(void) {
                 break;
 
             case 'r':
-                printf("Current rangefinder value: %u\r\n", distance);
+
+                do { LATBbits.LATB2 = 1; } while(0);
+                INTCONbits.TMR0IF = 0;
+                TMR0_WriteTimer(0x10000 - 10);
+                while(INTCONbits.TMR0IF == 0);
+                do { LATBbits.LATB2 = 0; } while(0);
+
+                printf("Distance = %u\r\n", distance);
+
+                break;
+
+            case 'c':
+                printf("Entering for loop...\r\n");
+                for(i = 0; i<316; i++) {
+                    for(j = 0; j<316; j++) {
+                        INTCONbits.TMR0IF = 0;
+                        TMR0_WriteTimer(0x10000 - 10);
+                        while(INTCONbits.TMR0IF == 0);
+                    }
+                }
+                printf("Exited for loop.\r\n");
                 break;
 
 
@@ -9628,33 +9663,34 @@ void main(void) {
   }
     }
 }
-
-void myTMR0ISR(void) {
-
-    switch(TMR0ISRstate) {
-
-        case SEND_TRIGGER:
-            do { LATBbits.LATB2 = 1; } while(0);
-            TMR0ISRstate = WAIT_ON_ECHO;
-            TMR0_WriteTimer(0x10000 - 10);
-            break;
-
-        case WAIT_ON_ECHO:
-            do { LATBbits.LATB2 = 0; } while(0);
-            microSecondDelay += 10;
-            if ((PORTBbits.RB0 == 1) || (microSecondDelay > 23500)) {
-                TMR0ISRstate = ECHO_RECEIVED;
-            }
-            TMR0_WriteTimer(0x10000 - 10);
-            break;
-
-        case ECHO_RECEIVED:
-            distance = microSecondDelay;
-            microSecondDelay = 0;
-            TMR0ISRstate = SEND_TRIGGER;
-            TMR0_WriteTimer(0x10000 - 30000);
-            break;
+# 200 "main.c"
+void echoISR(void) {
+    if (PORTBbits.RB4) {
+        start = TMR0_ReadTimer();
+    } else {
+        end = TMR0_ReadTimer();
+        distance = end - start;
     }
 
-    INTCONbits.TMR0IF = 0;
+}
+
+
+void microSecondDelay(uint16_t us) {
+
+  uint16_t i;
+
+  for (i=0; i<us; i++) {
+      __asm("NOP");
+      __asm("NOP");
+      __asm("NOP");
+
+      i = i;
+  }
+}
+
+void milliSecondDelay(uint16_t ms) {
+
+    uint16_t i;
+
+    for(i=0; i<ms; i++) microSecondDelay(1000);
 }

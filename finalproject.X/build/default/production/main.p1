@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "25 main.c
-[; ;main.c: 25:     printf("Development Board\r\n");
-[c E6151 0 1 2 .. ]
-[n E6151 . SEND_TRIGGER WAIT_ON_ECHO ECHO_RECEIVED  ]
+[; ;main.c: 25: void main(void) {
+[c E6152 0 1 2 .. ]
+[n E6152 . SEND_TRIGGER WAIT_ON_ECHO ECHO_RECEIVED  ]
 [p mainexit ]
 "76 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 76: void SYSTEM_Initialize(void);
@@ -30,13 +30,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _EPWM2_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
 "111 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-[v F5796 `(v ~T0 @X0 0 tf ]
-"309 ./mcc_generated_files/tmr0.h
-[; ;./mcc_generated_files/tmr0.h: 309:  void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F5796 ]
-"27 main.c
-[; ;main.c: 27:     printf("Obstacle-avoiding tank \r\n");
-[v _myTMR0ISR `(v ~T0 @X0 0 ef ]
 "16135 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 16135:     struct {
 [s S801 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -127,6 +120,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6553
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6553: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
 [v _PORTBbits `VS341 ~T0 @X0 0 e@3969 ]
+"197 ./mcc_generated_files/tmr0.h
+[; ;./mcc_generated_files/tmr0.h: 197: uint16_t TMR0_ReadTimer(void);
+[v _TMR0_ReadTimer `(us ~T0 @X0 0 ef ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -863,274 +859,359 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 16609: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "21 main.c
-[; ;main.c: 21:     do { LATAbits.LATA0 = 0; } while(0);
+[; ;main.c: 21: uint16_t j = 0;
 [p n 520 ]
 "22
-[; ;main.c: 22:     EPWM1_LoadDutyValue(255);
+[; ;main.c: 22: 
 [p n 1498 ]
 "25
-[; ;main.c: 25:     printf("Development Board\r\n");
-[v _TMR0ISRstate `E6151 ~T0 @X0 1 e ]
+[; ;main.c: 25: void main(void) {
+[v _TMR0ISRstate `E6152 ~T0 @X0 1 e ]
 [i _TMR0ISRstate
-. `E6151 0
+. `E6152 0
 ]
-"33
-[; ;main.c: 33: 
-[v _microSecondDelay `us ~T0 @X0 1 e ]
-[i _microSecondDelay
+"37
+[; ;main.c: 37:     printf("Final project terminal \r\n");
+[v _distance `us ~T0 @X0 1 e ]
+"38
+[; ;main.c: 38:     printf("Obstacle-avoiding tank \r\n");
+[v _start `us ~T0 @X0 1 e ]
+"39
+[; ;main.c: 39:     printf("\r\n> ");
+[v _end `us ~T0 @X0 1 e ]
+"41
+[; ;main.c: 41: 
+[v _echo_received `uc ~T0 @X0 1 e ]
+[i _echo_received
+-> -> 0 `i `uc
+]
+"44
+[; ;main.c: 44:     (INTCONbits.GIE = 1);
+[v _i `us ~T0 @X0 1 e ]
+[i _i
 -> -> 0 `i `us
 ]
-"34
-[; ;main.c: 34:  for(;;) {
-[v _distance `us ~T0 @X0 1 e ]
+"45
+[; ;main.c: 45: 
+[v _j `us ~T0 @X0 1 e ]
+[i _j
+-> -> 0 `i `us
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"38
-[; ;main.c: 38: 
+"49
+[; ;main.c: 49:    switch (cmd) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"39
-[; ;main.c: 39: 
+"50
+[; ;main.c: 50: 
 [v _cmd `uc ~T0 @X0 1 a ]
-"40
-[; ;main.c: 40: 
+"51
+[; ;main.c: 51: 
 [v _i `uc ~T0 @X0 1 a ]
-"41
-[; ;main.c: 41: 
+"52
+[; ;main.c: 52: 
 [v _motorsToggled `uc ~T0 @X0 1 a ]
 [e = _motorsToggled -> -> 0 `i `uc ]
-"43
-[; ;main.c: 43:     printf("-------------------------------------------------\r\n");
+"54
+[; ;main.c: 54:    case '?':
 [e ( _SYSTEM_Initialize ..  ]
-"45
-[; ;main.c: 45:                 printf("o: k\r\n");
+"56
+[; ;main.c: 56:                 printf("?: help menu\r\n");
 [e :U 836 ]
 {
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 835 ]
-"46
-[; ;main.c: 46:                 printf("Z: Reset processor.\r\n");
+"57
+[; ;main.c: 57:                 printf("o: k\r\n");
 [e ( _EPWM1_LoadDutyValue (1 -> -> 255 `i `us ]
-"47
-[; ;main.c: 47:                 printf("z: Clear the terminal.\r\n");
-[e ( _EPWM2_LoadDutyValue (1 -> -> 255 `i `us ]
-"49
-[; ;main.c: 49:                 printf("r: Read rangefinder value.\r\n");
-[e ( _printf :s 1C ]
-"50
-[; ;main.c: 50:                 printf("-------------------------------------------------\r\n");
-[e ( _printf :s 2C ]
-"51
-[; ;main.c: 51:     break;
-[e ( _printf :s 3C ]
-"52
-[; ;main.c: 52: 
-[e ( _printf :s 4C ]
-"54
-[; ;main.c: 54: 
-[e ( _TMR0_SetInterruptHandler (1 &U _myTMR0ISR ]
-"55
-[; ;main.c: 55: 
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"56
-[; ;main.c: 56:             case 'o':
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 "58
-[; ;main.c: 58:                 break;
+[; ;main.c: 58:                 printf("Z: Reset processor.\r\n");
+[e ( _EPWM2_LoadDutyValue (1 -> -> 255 `i `us ]
+"60
+[; ;main.c: 60:                 printf("t: Toggle motors.\r\n");
+[e ( _printf :s 1C ]
+"61
+[; ;main.c: 61:                 printf("r: Read rangefinder value.\r\n");
+[e ( _printf :s 2C ]
+"62
+[; ;main.c: 62:                 printf("c: Test timer period.\r\n");
+[e ( _printf :s 3C ]
+"63
+[; ;main.c: 63:                 printf("-------------------------------------------------\r\n");
+[e ( _printf :s 4C ]
+"67
+[; ;main.c: 67: 
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+"68
+[; ;main.c: 68: 
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"70
+[; ;main.c: 70:                 printf("o:      ok\r\n");
 {
 [e :U 837 ]
 {
-"59
-[; ;main.c: 59: 
+"71
+[; ;main.c: 71:                 break;
 [e $ ! != -> ( _EUSART1_is_rx_ready ..  `i -> 0 `i 840  ]
 {
-"60
-[; ;main.c: 60: 
+"72
+[; ;main.c: 72: 
 [e = _cmd -> ( _EUSART1_Read ..  `uc ]
-"61
-[; ;main.c: 61: 
+"73
+[; ;main.c: 73: 
 [e $U 842  ]
 {
-"66
-[; ;main.c: 66:                 break;
+"78
+[; ;main.c: 78:                 __asm("reset");
 [e :U 843 ]
-"67
-[; ;main.c: 67: 
+"79
+[; ;main.c: 79:                 break;
 [e ( _printf :s 5C ]
-"68
-[; ;main.c: 68: 
-[e ( _printf :s 6C ]
-"69
-[; ;main.c: 69: 
-[e ( _printf :s 7C ]
-"70
-[; ;main.c: 70: 
-[e ( _printf :s 8C ]
-"71
-[; ;main.c: 71:             case 'z':
-[e ( _printf :s 9C ]
-"72
-[; ;main.c: 72:                 for (i=0; i<40; i++) printf("\n");
-[e ( _printf :s 10C ]
-"73
-[; ;main.c: 73:                 break;
-[e ( _printf :s 11C ]
-"74
-[; ;main.c: 74: 
-[e ( _printf :s 12C ]
-"75
-[; ;main.c: 75:             case 't':
-[e $U 841  ]
 "80
-[; ;main.c: 80:                 } else {
-[e :U 844 ]
+[; ;main.c: 80: 
+[e ( _printf :s 6C ]
 "81
-[; ;main.c: 81:                     motorsToggled = 1;
-[e ( _printf :s 13C ]
+[; ;main.c: 81: 
+[e ( _printf :s 7C ]
 "82
-[; ;main.c: 82:                     do { LATBbits.LATB6 = 1; } while(0);
-[e $U 841  ]
+[; ;main.c: 82: 
+[e ( _printf :s 8C ]
+"83
+[; ;main.c: 83: 
+[e ( _printf :s 9C ]
+"84
+[; ;main.c: 84:             case 'z':
+[e ( _printf :s 10C ]
+"85
+[; ;main.c: 85:                 for (i=0; i<40; i++) printf("\n");
+[e ( _printf :s 11C ]
+"86
+[; ;main.c: 86:                 break;
+[e ( _printf :s 12C ]
 "87
-[; ;main.c: 87:                     EPWM1_LoadDutyValue(128);
-[e :U 845 ]
+[; ;main.c: 87: 
+[e ( _printf :s 13C ]
 "88
-[; ;main.c: 88:                     EPWM2_LoadDutyValue(128);
+[; ;main.c: 88:             case 't':
+[e $U 841  ]
+"93
+[; ;main.c: 93:                 } else {
+[e :U 844 ]
+"94
+[; ;main.c: 94:                     motorsToggled = 1;
+[e ( _printf :s 14C ]
+"95
+[; ;main.c: 95:                     do { LATBbits.LATB6 = 1; } while(0);
+[e $U 841  ]
+"100
+[; ;main.c: 100:                     EPWM1_LoadDutyValue(128);
+[e :U 845 ]
+"101
+[; ;main.c: 101:                     EPWM2_LoadDutyValue(128);
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 40 `i 846  ]
 [e $U 847  ]
 [e :U 846 ]
-[e ( _printf :s 14C ]
+[e ( _printf :s 15C ]
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 40 `i 846  ]
 [e :U 847 ]
 }
-"89
-[; ;main.c: 89:                     printf("Motors toggled on.\r\n");
+"102
+[; ;main.c: 102:                     printf("Motors toggled on.\r\n");
 [; <" reset ;# ">
-"90
-[; ;main.c: 90:                 }
+"103
+[; ;main.c: 103:                 }
 [e $U 841  ]
-"95
-[; ;main.c: 95:                 printf("Current rangefinder value: %u\r\n", distance);
+"108
+[; ;main.c: 108: 
 [e :U 849 ]
-"96
-[; ;main.c: 96:                 break;
+"109
+[; ;main.c: 109:                 do { LATBbits.LATB2 = 1; } while(0);
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 40 `i 850  ]
 [e $U 851  ]
 [e :U 850 ]
-[e ( _printf :s 15C ]
+[e ( _printf :s 16C ]
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 40 `i 850  ]
 [e :U 851 ]
 }
-"97
-[; ;main.c: 97: 
+"110
+[; ;main.c: 110:                 INTCONbits.TMR0IF = 0;
 [e $U 841  ]
-"99
-[; ;main.c: 99: 
+"112
+[; ;main.c: 112:                 while(INTCONbits.TMR0IF == 0);
 [e :U 853 ]
-"100
-[; ;main.c: 100: 
+"113
+[; ;main.c: 113:                 do { LATBbits.LATB2 = 0; } while(0);
 [e $ ! != -> _motorsToggled `i -> 0 `i 854  ]
 {
-"101
-[; ;main.c: 101:    default:
+"114
+[; ;main.c: 114: 
 [e = _motorsToggled -> -> 0 `i `uc ]
-"102
-[; ;main.c: 102:     printf("Unknown key %c\r\n",cmd);
+"115
+[; ;main.c: 115:                 printf("Distance = %u\r\n", distance);
 [e :U 857 ]
 {
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 856 ]
-"103
-[; ;main.c: 103:     break;
-[e ( _printf :s 16C ]
-"104
-[; ;main.c: 104:    }
+"116
+[; ;main.c: 116: 
+[e ( _printf :s 17C ]
+"117
+[; ;main.c: 117:                 break;
 }
 [e $U 858  ]
 [e :U 854 ]
 {
-"105
-[; ;main.c: 105: 
+"118
+[; ;main.c: 118: 
 [e = _motorsToggled -> -> 1 `i `uc ]
-"106
-[; ;main.c: 106:   }
+"119
+[; ;main.c: 119:             case 'c':
 [e :U 861 ]
 {
 [e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
 }
 [e :U 860 ]
-"107
-[; ;main.c: 107:     }
+"120
+[; ;main.c: 120:                 printf("Entering for loop...\r\n");
 [e :U 864 ]
 {
 [e = . . _LATBbits 0 7 -> -> 0 `i `uc ]
 }
 [e :U 863 ]
-"108
-[; ;main.c: 108: }
+"121
+[; ;main.c: 121:                 for(i = 0; i<316; i++) {
 [e :U 867 ]
 {
 [e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
 }
 [e :U 866 ]
-"109
-[; ;main.c: 109: 
+"122
+[; ;main.c: 122:                     for(j = 0; j<316; j++) {
 [e :U 870 ]
 {
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 }
 [e :U 869 ]
-"110
-[; ;main.c: 110: void myTMR0ISR(void) {
+"123
+[; ;main.c: 123:                         INTCONbits.TMR0IF = 0;
 [e :U 873 ]
 {
 [e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
 }
 [e :U 872 ]
-"111
-[; ;main.c: 111: 
+"124
+[; ;main.c: 124:                         TMR0_WriteTimer(0x10000 - 10);
 [e ( _EPWM1_LoadDutyValue (1 -> -> 128 `i `us ]
-"112
-[; ;main.c: 112:     switch(TMR0ISRstate) {
+"125
+[; ;main.c: 125:                         while(INTCONbits.TMR0IF == 0);
 [e ( _EPWM2_LoadDutyValue (1 -> -> 128 `i `us ]
-"113
-[; ;main.c: 113: 
-[e ( _printf :s 17C ]
-"114
-[; ;main.c: 114:         case SEND_TRIGGER:
+"126
+[; ;main.c: 126:                     }
+[e ( _printf :s 18C ]
+"127
+[; ;main.c: 127:                 }
 }
 [e :U 858 ]
-"116
-[; ;main.c: 116:             TMR0ISRstate = WAIT_ON_ECHO;
+"129
+[; ;main.c: 129:                 break;
 [e $U 841  ]
-"118
-[; ;main.c: 118:             break;
+"131
+[; ;main.c: 131: 
 [e :U 874 ]
-"119
-[; ;main.c: 119: 
-[e ( _printf , (. :s 18C -> _distance `ui ]
-"120
-[; ;main.c: 120:         case WAIT_ON_ECHO:
+"133
+[; ;main.c: 133: 
+[e :U 877 ]
+{
+[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
+}
+[e :U 876 ]
+"134
+[; ;main.c: 134:    default:
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"135
+[; ;main.c: 135:     printf("Unknown key %c\r\n",cmd);
+[e ( _TMR0_WriteTimer (1 -> - -> 65536 `l -> -> 10 `i `l `us ]
+"136
+[; ;main.c: 136:     break;
+[e $U 878  ]
+[e :U 879 ]
+[e :U 878 ]
+[e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 879  ]
+[e :U 880 ]
+"137
+[; ;main.c: 137:    }
+[e :U 883 ]
+{
+[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
+}
+[e :U 882 ]
+"139
+[; ;main.c: 139:   }
+[e ( _printf , (. :s 19C -> _distance `ui ]
+"141
+[; ;main.c: 141: }
 [e $U 841  ]
-"125
-[; ;main.c: 125:             }
-[e :U 875 ]
-"126
-[; ;main.c: 126:             TMR0_WriteTimer(0x10000 - 10);
-[e ( _printf , (. :s 19C -> _cmd `i ]
-"127
-[; ;main.c: 127:             break;
+"143
+[e :U 884 ]
+"144
+[e ( _printf :s 20C ]
+"145
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 316 `i 885  ]
+[e $U 886  ]
+[e :U 885 ]
+{
+"146
+{
+[e = _j -> -> 0 `i `us ]
+[e $ < -> _j `ui -> -> 316 `i `ui 888  ]
+[e $U 889  ]
+[e :U 888 ]
+{
+"147
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"148
+[e ( _TMR0_WriteTimer (1 -> - -> 65536 `l -> -> 10 `i `l `us ]
+"149
+[e $U 891  ]
+[e :U 892 ]
+[e :U 891 ]
+[e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 892  ]
+[e :U 893 ]
+"150
+}
+[e ++ _j -> -> 1 `i `us ]
+[e $ < -> _j `ui -> -> 316 `i `ui 888  ]
+[e :U 889 ]
+}
+"151
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 316 `i 885  ]
+[e :U 886 ]
+}
+"152
+[e ( _printf :s 21C ]
+"153
 [e $U 841  ]
-"128
-[; ;main.c: 128: 
+"158
+[e :U 894 ]
+"159
+[e ( _printf , (. :s 22C -> _cmd `i ]
+"160
+[e $U 841  ]
+"161
 }
 [e $U 841  ]
 [e :U 842 ]
@@ -1140,112 +1221,140 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 122 `ui `i 849
  , $ -> -> 116 `ui `i 853
  , $ -> -> 114 `ui `i 874
- 875 ]
+ , $ -> -> 99 `ui `i 884
+ 894 ]
 [e :U 841 ]
-"130
-[; ;main.c: 130:             distance = microSecondDelay;
+"163
 }
 [e :U 840 ]
-"131
-[; ;main.c: 131:             microSecondDelay = 0;
+"164
 }
 [e $U 837  ]
 [e :U 838 ]
 }
-"132
-[; ;main.c: 132:             TMR0ISRstate = SEND_TRIGGER;
+"165
 [e :UE 833 ]
 }
-"134
-[; ;main.c: 134:             break;
-[v _myTMR0ISR `(v ~T0 @X0 1 ef ]
+"200
+[; ;main.c: 200: void echoISR(void) {
+[v _echoISR `(v ~T0 @X0 1 ef ]
 {
-[e :U _myTMR0ISR ]
+[e :U _echoISR ]
 [f ]
-"136
-[; ;main.c: 136: 
-[e $U 878  ]
+"201
+[; ;main.c: 201:     if (PORTBbits.RB4) {
+[e $ ! != -> . . _PORTBbits 0 4 `i -> 0 `i 896  ]
 {
-"138
-[; ;main.c: 138: }
-[e :U 879 ]
-"139
-[e :U 882 ]
+"202
+[; ;main.c: 202:         start = TMR0_ReadTimer();
+[e = _start ( _TMR0_ReadTimer ..  ]
+"203
+[; ;main.c: 203:     } else {
+}
+[e $U 897  ]
+[e :U 896 ]
 {
-[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
+"204
+[; ;main.c: 204:         end = TMR0_ReadTimer();
+[e = _end ( _TMR0_ReadTimer ..  ]
+"205
+[; ;main.c: 205:         distance = end - start;
+[e = _distance -> - -> _end `ui -> _start `ui `us ]
+"206
+[; ;main.c: 206:     }
 }
-[e :U 881 ]
-"140
-[e = _TMR0ISRstate . `E6151 1 ]
-"141
-[e ( _TMR0_WriteTimer (1 -> - -> 65536 `l -> -> 10 `i `l `us ]
-"142
-[e $U 877  ]
-"144
-[e :U 883 ]
-"145
-[e :U 886 ]
+[e :U 897 ]
+"208
+[; ;main.c: 208: }
+[e :UE 895 ]
+}
+"211
+[; ;main.c: 211: void microSecondDelay(uint16_t us) {
+[v _microSecondDelay `(v ~T0 @X0 1 ef1`us ]
 {
-[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
-}
-[e :U 885 ]
-"146
-[e =+ _microSecondDelay -> -> 10 `i `us ]
-"147
-[e $ ! || == -> . . _PORTBbits 0 0 `i -> 1 `i > -> _microSecondDelay `ui -> -> 23500 `i `ui 887  ]
+[e :U _microSecondDelay ]
+[v _us `us ~T0 @X0 1 r1 ]
+[f ]
+"213
+[; ;main.c: 213:   uint16_t i;
+[v _i `us ~T0 @X0 1 a ]
+"215
+[; ;main.c: 215:   for (i=0; i<us; i++) {
 {
-"148
-[e = _TMR0ISRstate . `E6151 2 ]
-"149
+[e = _i -> -> 0 `i `us ]
+[e $U 902  ]
+[e :U 899 ]
+{
+"216
+[; ;main.c: 216:       __asm("NOP");
+[; <" NOP ;# ">
+"217
+[; ;main.c: 217:       __asm("NOP");
+[; <" NOP ;# ">
+"218
+[; ;main.c: 218:       __asm("NOP");
+[; <" NOP ;# ">
+"220
+[; ;main.c: 220:       i = i;
+[e = _i _i ]
+"221
+[; ;main.c: 221:   }
 }
-[e :U 887 ]
-"150
-[e ( _TMR0_WriteTimer (1 -> - -> 65536 `l -> -> 10 `i `l `us ]
-"151
-[e $U 877  ]
-"153
-[e :U 888 ]
-"154
-[e = _distance _microSecondDelay ]
-"155
-[e = _microSecondDelay -> -> 0 `i `us ]
-"156
-[e = _TMR0ISRstate . `E6151 0 ]
-"157
-[e ( _TMR0_WriteTimer (1 -> - -> 65536 `l -> -> 30000 `i `l `us ]
-"158
-[e $U 877  ]
-"159
+[e ++ _i -> -> 1 `i `us ]
+[e :U 902 ]
+[e $ < -> _i `ui -> _us `ui 899  ]
+[e :U 900 ]
 }
-[e $U 877  ]
-[e :U 878 ]
-[e [\ -> _TMR0ISRstate `ui , $ -> . `E6151 0 `ui 879
- , $ -> . `E6151 1 `ui 883
- , $ -> . `E6151 2 `ui 888
- 877 ]
-[e :U 877 ]
-"161
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"162
-[e :UE 876 ]
+"222
+[; ;main.c: 222: }
+[e :UE 898 ]
+}
+"224
+[; ;main.c: 224: void milliSecondDelay(uint16_t ms) {
+[v _milliSecondDelay `(v ~T0 @X0 1 ef1`us ]
+{
+[e :U _milliSecondDelay ]
+[v _ms `us ~T0 @X0 1 r1 ]
+[f ]
+"226
+[; ;main.c: 226:     uint16_t i;
+[v _i `us ~T0 @X0 1 a ]
+"228
+[; ;main.c: 228:     for(i=0; i<ms; i++) microSecondDelay(1000);
+{
+[e = _i -> -> 0 `i `us ]
+[e $U 907  ]
+[e :U 904 ]
+[e ( _microSecondDelay (1 -> -> 1000 `i `us ]
+[e ++ _i -> -> 1 `i `us ]
+[e :U 907 ]
+[e $ < -> _i `ui -> _ms `ui 904  ]
+[e :U 905 ]
+}
+"229
+[; ;main.c: 229: }
+[e :UE 903 ]
 }
 [p f _printf 8913920 ]
 [a 4C 13 10 62 32 0 ]
 [a 6C 63 58 32 104 101 108 112 32 109 101 110 117 13 10 0 ]
-[a 18C 67 117 114 114 101 110 116 32 114 97 110 103 101 102 105 110 100 101 114 32 118 97 108 117 101 58 32 37 117 13 10 0 ]
-[a 13C 111 58 32 32 32 32 32 32 111 107 13 10 0 ]
+[a 19C 68 105 115 116 97 110 99 101 32 61 32 37 117 13 10 0 ]
+[a 14C 111 58 32 32 32 32 32 32 111 107 13 10 0 ]
 [a 7C 111 58 32 107 13 10 0 ]
 [a 1C 68 101 118 101 108 111 112 109 101 110 116 32 66 111 97 114 100 13 10 0 ]
-[a 19C 85 110 107 110 111 119 110 32 107 101 121 32 37 99 13 10 0 ]
+[a 22C 85 110 107 110 111 119 110 32 107 101 121 32 37 99 13 10 0 ]
 [a 10C 116 58 32 84 111 103 103 108 101 32 109 111 116 111 114 115 46 13 10 0 ]
 [a 8C 90 58 32 82 101 115 101 116 32 112 114 111 99 101 115 115 111 114 46 13 10 0 ]
-[a 17C 77 111 116 111 114 115 32 116 111 103 103 108 101 100 32 111 110 46 13 10 0 ]
+[a 21C 69 120 105 116 101 100 32 102 111 114 32 108 111 111 112 46 13 10 0 ]
+[a 18C 77 111 116 111 114 115 32 116 111 103 103 108 101 100 32 111 110 46 13 10 0 ]
 [a 9C 122 58 32 67 108 101 97 114 32 116 104 101 32 116 101 114 109 105 110 97 108 46 13 10 0 ]
-[a 16C 77 111 116 111 114 115 32 116 111 103 103 108 101 100 32 111 102 102 46 13 10 0 ]
+[a 17C 77 111 116 111 114 115 32 116 111 103 103 108 101 100 32 111 102 102 46 13 10 0 ]
 [a 11C 114 58 32 82 101 97 100 32 114 97 110 103 101 102 105 110 100 101 114 32 118 97 108 117 101 46 13 10 0 ]
+[a 12C 99 58 32 84 101 115 116 32 116 105 109 101 114 32 112 101 114 105 111 100 46 13 10 0 ]
+[a 20C 69 110 116 101 114 105 110 103 32 102 111 114 32 108 111 111 112 46 46 46 13 10 0 ]
 [a 5C 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 13 10 0 ]
-[a 12C 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 13 10 0 ]
+[a 13C 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 13 10 0 ]
 [a 2C 70 105 110 97 108 32 112 114 111 106 101 99 116 32 116 101 114 109 105 110 97 108 32 13 10 0 ]
 [a 3C 79 98 115 116 97 99 108 101 45 97 118 111 105 100 105 110 103 32 116 97 110 107 32 13 10 0 ]
-[a 14C 10 0 ]
 [a 15C 10 0 ]
+[a 16C 10 0 ]
