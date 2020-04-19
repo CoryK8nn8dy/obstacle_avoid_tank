@@ -30,13 +30,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _EPWM2_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
 "111 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-[v F5720 `(v ~T0 @X0 0 tf ]
-"271 ./mcc_generated_files/pin_manager.h
-[; ;./mcc_generated_files/pin_manager.h: 271: void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _IOCB4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F5720 ]
-"30 main.c
-[; ;main.c: 30:     SYSTEM_Initialize();
-[v _echoISR `(v ~T0 @X0 0 ef ]
 "16135 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 16135:     struct {
 [s S801 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -887,7 +880,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 39:     printf("\r\n> ");
 [v _end `us ~T0 @X0 1 e ]
 "41
-[; ;main.c: 41:     IOCB4_SetInterruptHandler(echoISR);
+[; ;main.c: 41: 
 [v _echo_received `uc ~T0 @X0 1 e ]
 [i _echo_received
 -> -> 0 `i `uc
@@ -949,9 +942,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "63
 [; ;main.c: 63:                 printf("-------------------------------------------------\r\n");
 [e ( _printf :s 4C ]
-"65
-[; ;main.c: 65: 
-[e ( _IOCB4_SetInterruptHandler (1 &U _echoISR ]
 "67
 [; ;main.c: 67: 
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]

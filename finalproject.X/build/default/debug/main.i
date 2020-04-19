@@ -9527,7 +9527,7 @@ myISRstates_t TMR0ISRstate = SEND_TRIGGER;
 
 void microSecondDelay(uint16_t us);
 void milliSecondDelay(uint16_t ms);
-void echoISR(void);
+
 void goForward(void);
 void goBackward(void);
 void goCW(void);
@@ -9562,7 +9562,7 @@ void main(void) {
     printf("Obstacle-avoiding tank \r\n");
     printf("\r\n> ");
 
-    IOCB4_SetInterruptHandler(echoISR);
+
 
     (INTCONbits.PEIE = 1);
     (INTCONbits.GIE = 1);

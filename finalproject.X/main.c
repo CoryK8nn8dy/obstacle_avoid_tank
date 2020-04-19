@@ -27,7 +27,7 @@ myISRstates_t TMR0ISRstate = SEND_TRIGGER;
 //void myTMR0ISR(void);
 void microSecondDelay(uint16_t us);
 void milliSecondDelay(uint16_t ms);
-//void echoISR(void);
+void echoISR(void);
 void goForward(void);
 void goBackward(void);
 void goCW(void);
@@ -41,8 +41,8 @@ uint16_t end;
 uint8_t echo_received = 0;
 
 // TEMP
-uint16_t i = 0;
-uint16_t j = 0;
+uint16_t tmri = 0;
+uint16_t tmrj = 0;
 
 //*****************************************************************
 //*****************************************************************
@@ -62,7 +62,7 @@ void main(void) {
     printf("Obstacle-avoiding tank \r\n");   
     printf("\r\n> ");                       // print a nice command prompt
 
-    //IOCB4_SetInterruptHandler(echoISR);
+    IOCB4_SetInterruptHandler(echoISR);
     //TMR0_SetInterruptHandler(myTMR0ISR);    
     INTERRUPT_PeripheralInterruptEnable();
     INTERRUPT_GlobalInterruptEnable();
@@ -142,8 +142,8 @@ void main(void) {
                 
             case 'c':
                 printf("Entering for loop...\r\n");
-                for(i = 0; i<316; i++) {
-                    for(j = 0; j<316; j++) {
+                for(tmri = 0; tmri<316; tmri++) {
+                    for(tmrj = 0; tmrj<316; tmrj++) {
                         INTCONbits.TMR0IF = 0;
                         TMR0_WriteTimer(0x10000 - 10);
                         while(INTCONbits.TMR0IF == 0);
@@ -204,7 +204,6 @@ void echoISR(void) {
         end = TMR0_ReadTimer();
         distance = end - start;
     }
-    
 }
 
 

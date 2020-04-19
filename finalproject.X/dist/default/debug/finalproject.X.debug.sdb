@@ -57,8 +57,6 @@ ECHO_RECEIVED 2
 [v ___omul __omul `(uo  1 e 8 0 ]
 "49 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"200
-[v _echoISR echoISR `(v  1 e 1 0 ]
 "210
 [v _microSecondDelay microSecondDelay `(v  1 e 1 0 ]
 "64 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm1.c
@@ -168,7 +166,7 @@ ECHO_RECEIVED 2
 [v _CCPR2L CCPR2L `VEuc  1 e 1 @3943 ]
 "3275
 [v _CCPR2H CCPR2H `VEuc  1 e 1 @3944 ]
-[s S1081 . 1 `uc 1 RB0 1 0 :1:0 
+[s S1075 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -178,7 +176,7 @@ ECHO_RECEIVED 2
 `uc 1 RB7 1 0 :1:7 
 ]
 "6553
-[s S1090 . 1 `uc 1 INT0 1 0 :1:0 
+[s S1084 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 CCP2 1 0 :1:3 
@@ -187,7 +185,7 @@ ECHO_RECEIVED 2
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S1099 . 1 `uc 1 AN12 1 0 :1:0 
+[s S1093 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -196,7 +194,7 @@ ECHO_RECEIVED 2
 `uc 1 TX2 1 0 :1:6 
 `uc 1 RX2 1 0 :1:7 
 ]
-[s S1108 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S1102 . 1 `uc 1 FLT0 1 0 :1:0 
 `uc 1 C12IN3M 1 0 :1:1 
 `uc 1 P1B 1 0 :1:2 
 `uc 1 C12IN2M 1 0 :1:3 
@@ -205,7 +203,7 @@ ECHO_RECEIVED 2
 `uc 1 CK2 1 0 :1:6 
 `uc 1 DT2 1 0 :1:7 
 ]
-[s S1117 . 1 `uc 1 SRI 1 0 :1:0 
+[s S1111 . 1 `uc 1 SRI 1 0 :1:0 
 `uc 1 C12IN3N 1 0 :1:1 
 `uc 1 CTED1 1 0 :1:2 
 `uc 1 C12IN2N 1 0 :1:3 
@@ -214,34 +212,34 @@ ECHO_RECEIVED 2
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S1126 . 1 `uc 1 CCP4 1 0 :1:0 
+[s S1120 . 1 `uc 1 CCP4 1 0 :1:0 
 `uc 1 P1C 1 0 :1:1 
 `uc 1 SDA2 1 0 :1:2 
 `uc 1 CTED2 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 T3CKI 1 0 :1:5 
 ]
-[s S1133 . 1 `uc 1 SS2 1 0 :1:0 
+[s S1127 . 1 `uc 1 SS2 1 0 :1:0 
 `uc 1 SCL2 1 0 :1:1 
 `uc 1 SDI2 1 0 :1:2 
 `uc 1 P2A 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 P3A 1 0 :1:5 
 ]
-[s S1140 . 1 `uc 1 NOT_SS2 1 0 :1:0 
+[s S1134 . 1 `uc 1 NOT_SS2 1 0 :1:0 
 ]
-[s S1142 . 1 `uc 1 nSS2 1 0 :1:0 
+[s S1136 . 1 `uc 1 nSS2 1 0 :1:0 
 `uc 1 SCK2 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SDO2 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 P2B 1 0 :1:5 
 ]
-[s S1149 . 1 `uc 1 . 1 0 :3:0 
+[s S1143 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S1152 . 1 `S1081 1 . 1 0 `S1090 1 . 1 0 `S1099 1 . 1 0 `S1108 1 . 1 0 `S1117 1 . 1 0 `S1126 1 . 1 0 `S1133 1 . 1 0 `S1140 1 . 1 0 `S1142 1 . 1 0 `S1149 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES1152  1 e 1 @3969 ]
+[u S1146 . 1 `S1075 1 . 1 0 `S1084 1 . 1 0 `S1093 1 . 1 0 `S1102 1 . 1 0 `S1111 1 . 1 0 `S1120 1 . 1 0 `S1127 1 . 1 0 `S1134 1 . 1 0 `S1136 1 . 1 0 `S1143 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1146  1 e 1 @3969 ]
 "7244
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
 [s S958 . 1 `uc 1 LATA0 1 0 :1:0 
@@ -267,7 +265,7 @@ ECHO_RECEIVED 2
 [v _LATAbits LATAbits `VES976  1 e 1 @3977 ]
 "7356
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
-[s S1040 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S1034 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -277,7 +275,7 @@ ECHO_RECEIVED 2
 `uc 1 LATB7 1 0 :1:7 
 ]
 "7383
-[s S1049 . 1 `uc 1 LB0 1 0 :1:0 
+[s S1043 . 1 `uc 1 LB0 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 `uc 1 LB2 1 0 :1:2 
 `uc 1 LB3 1 0 :1:3 
@@ -286,8 +284,8 @@ ECHO_RECEIVED 2
 `uc 1 LB6 1 0 :1:6 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S1058 . 1 `S1040 1 . 1 0 `S1049 1 . 1 0 ]
-[v _LATBbits LATBbits `VES1058  1 e 1 @3978 ]
+[u S1052 . 1 `S1034 1 . 1 0 `S1043 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1052  1 e 1 @3978 ]
 "7468
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
 "7580
@@ -620,137 +618,137 @@ ECHO_RECEIVED 2
 [v _main main `(v  1 e 1 0 ]
 {
 "51
-[v main@i i `uc  1 a 1 37 ]
+[v main@i i `uc  1 a 1 12 ]
 "50
-[v main@cmd cmd `uc  1 a 1 36 ]
+[v main@cmd cmd `uc  1 a 1 11 ]
 "52
-[v main@motorsToggled motorsToggled `uc  1 a 1 35 ]
+[v main@motorsToggled motorsToggled `uc  1 a 1 10 ]
 "165
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
 {
 "8
-[v printf@ap ap `[1]*.39v  1 a 2 31 ]
+[v printf@ap ap `[1]*.39v  1 a 2 6 ]
 "5
-[v printf@fmt fmt `*.32Cuc  1 p 2 25 ]
+[v printf@fmt fmt `*.32Cuc  1 p 2 0 ]
 "13
 } 0
 "1368 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1371
-[v vfprintf@cfmt cfmt `*.32uc  1 a 2 71 ]
-[s S1319 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.32uc  1 a 2 88 ]
+[s S1313 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.2S1319  1 p 2 19 ]
-[v vfprintf@fmt fmt `*.32Cuc  1 p 2 21 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 23 ]
+[v vfprintf@fp fp `*.2S1313  1 p 2 82 ]
+[v vfprintf@fmt fmt `*.32Cuc  1 p 2 84 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 86 ]
 "1382
 } 0
 "670
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
 "675
-[v vfpfcnvrt@llu llu `uo  1 a 8 10 ]
+[v vfpfcnvrt@llu llu `uo  1 a 8 73 ]
 "672
-[v vfpfcnvrt@c c `uc  1 a 1 18 ]
-[s S1319 _IO_FILE 0 ]
+[v vfpfcnvrt@c c `uc  1 a 1 81 ]
+[s S1313 _IO_FILE 0 ]
 "670
-[v vfpfcnvrt@fp fp `*.2S1319  1 p 2 0 ]
-[v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 2 ]
-[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 4 ]
+[v vfpfcnvrt@fp fp `*.2S1313  1 p 2 63 ]
+[v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 65 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 67 ]
 "1365
 } 0
 "593
 [v _utoa utoa `(i  1 s 2 utoa ]
 {
 "596
-[v utoa@n n `uo  1 a 8 61 ]
+[v utoa@n n `uo  1 a 8 53 ]
 "595
-[v utoa@i i `i  1 a 2 69 ]
-[v utoa@w w `i  1 a 2 59 ]
-[v utoa@p p `i  1 a 2 57 ]
-[s S1319 _IO_FILE 0 ]
+[v utoa@i i `i  1 a 2 61 ]
+[v utoa@w w `i  1 a 2 51 ]
+[v utoa@p p `i  1 a 2 49 ]
+[s S1313 _IO_FILE 0 ]
 "593
-[v utoa@fp fp `*.2S1319  1 p 2 39 ]
-[v utoa@d d `uo  1 p 8 41 ]
+[v utoa@fp fp `*.2S1313  1 p 2 31 ]
+[v utoa@d d `uo  1 p 8 33 ]
 "619
 } 0
 "9 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\lomod.c
 [v ___lomod __lomod `(uo  1 e 8 0 ]
 {
 "12
-[v ___lomod@counter counter `uc  1 a 1 26 ]
+[v ___lomod@counter counter `uc  1 a 1 18 ]
 "9
-[v ___lomod@dividend dividend `uo  1 p 8 10 ]
-[v ___lomod@divisor divisor `uo  1 p 8 18 ]
+[v ___lomod@dividend dividend `uo  1 p 8 2 ]
+[v ___lomod@divisor divisor `uo  1 p 8 10 ]
 "27
 } 0
 "9 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\lodiv.c
 [v ___lodiv __lodiv `(uo  1 e 8 0 ]
 {
 "12
-[v ___lodiv@quotient quotient `uo  1 a 8 26 ]
+[v ___lodiv@quotient quotient `uo  1 a 8 18 ]
 "13
-[v ___lodiv@counter counter `uc  1 a 1 34 ]
+[v ___lodiv@counter counter `uc  1 a 1 26 ]
 "9
-[v ___lodiv@dividend dividend `uo  1 p 8 10 ]
-[v ___lodiv@divisor divisor `uo  1 p 8 18 ]
+[v ___lodiv@dividend dividend `uo  1 p 8 2 ]
+[v ___lodiv@divisor divisor `uo  1 p 8 10 ]
 "32
 } 0
 "259 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
 [v _ctoa ctoa `(i  1 s 2 ctoa ]
 {
 "261
-[v ctoa@w w `i  1 a 2 42 ]
-[s S1319 _IO_FILE 0 ]
+[v ctoa@w w `i  1 a 2 34 ]
+[s S1313 _IO_FILE 0 ]
 "259
-[v ctoa@fp fp `*.2S1319  1 p 2 39 ]
-[v ctoa@c c `uc  1 p 1 41 ]
+[v ctoa@fp fp `*.2S1313  1 p 2 31 ]
+[v ctoa@c c `uc  1 p 1 33 ]
 "270
 } 0
 "72
 [v _pad pad `(i  1 s 2 pad ]
 {
 "74
-[v pad@w w `i  1 a 2 37 ]
-[v pad@i i `i  1 a 2 35 ]
-[s S1319 _IO_FILE 0 ]
+[v pad@w w `i  1 a 2 29 ]
+[v pad@i i `i  1 a 2 27 ]
+[s S1313 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.2S1319  1 p 2 28 ]
-[v pad@buf buf `*.39uc  1 p 2 30 ]
-[v pad@p p `i  1 p 2 32 ]
+[v pad@fp fp `*.2S1313  1 p 2 20 ]
+[v pad@buf buf `*.39uc  1 p 2 22 ]
+[v pad@p p `i  1 p 2 24 ]
 "95
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 {
 "7
-[v strlen@a a `*.39Cuc  1 a 2 12 ]
+[v strlen@a a `*.39Cuc  1 a 2 4 ]
 "5
-[v strlen@s s `*.39Cuc  1 p 2 10 ]
+[v strlen@s s `*.39Cuc  1 p 2 2 ]
 "12
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputs.c
 [v _fputs fputs `(i  1 e 2 0 ]
 {
 "11
-[v fputs@i i `i  1 a 2 26 ]
+[v fputs@i i `i  1 a 2 18 ]
 "10
-[v fputs@c c `uc  1 a 1 25 ]
+[v fputs@c c `uc  1 a 1 17 ]
 "8
-[v fputs@s s `*.39Cuc  1 p 2 21 ]
-[s S1824 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.2S1824  1 p 2 23 ]
+[v fputs@s s `*.39Cuc  1 p 2 13 ]
+[s S1818 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.2S1818  1 p 2 15 ]
 "19
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
-[v fputc@c c `i  1 p 2 12 ]
-[s S1824 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.2S1824  1 p 2 14 ]
+[v fputc@c c `i  1 p 2 4 ]
+[s S1818 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S1818  1 p 2 6 ]
 "21
 } 0
 "146 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/eusart1.c
@@ -759,7 +757,7 @@ ECHO_RECEIVED 2
 [v putch@txData txData `uc  1 a 1 wreg ]
 [v putch@txData txData `uc  1 a 1 wreg ]
 "148
-[v putch@txData txData `uc  1 a 1 11 ]
+[v putch@txData txData `uc  1 a 1 3 ]
 "149
 } 0
 "132
@@ -767,13 +765,13 @@ ECHO_RECEIVED 2
 {
 [v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
 [v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART1_Write@txData txData `uc  1 a 1 10 ]
+[v EUSART1_Write@txData txData `uc  1 a 1 2 ]
 "139
 } 0
 "115 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr0.c
 [v _TMR0_WriteTimer TMR0_WriteTimer `(v  1 e 1 0 ]
 {
-[v TMR0_WriteTimer@timerVal timerVal `us  1 p 2 10 ]
+[v TMR0_WriteTimer@timerVal timerVal `us  1 p 2 2 ]
 "120
 } 0
 "50 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/mcc.c
@@ -804,7 +802,7 @@ ECHO_RECEIVED 2
 "132
 [v _IOCB4_SetInterruptHandler IOCB4_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v IOCB4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 10 ]
+[v IOCB4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
 "134
 } 0
 "64 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/mcc.c
@@ -825,19 +823,19 @@ ECHO_RECEIVED 2
 "170
 [v _EUSART1_SetOverrunErrorHandler EUSART1_SetOverrunErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART1_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 10 ]
+[v EUSART1_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 2 ]
 "172
 } 0
 "166
 [v _EUSART1_SetFramingErrorHandler EUSART1_SetFramingErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART1_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 10 ]
+[v EUSART1_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 2 ]
 "168
 } 0
 "174
 [v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 10 ]
+[v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 2 ]
 "176
 } 0
 "64 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm2.c
@@ -863,13 +861,13 @@ ECHO_RECEIVED 2
 "90 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm2.c
 [v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 1 0 ]
 {
-[v EPWM2_LoadDutyValue@dutyValue dutyValue `us  1 p 2 10 ]
+[v EPWM2_LoadDutyValue@dutyValue dutyValue `us  1 p 2 2 ]
 "97
 } 0
 "90 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm1.c
 [v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 1 0 ]
 {
-[v EPWM1_LoadDutyValue@dutyValue dutyValue `us  1 p 2 10 ]
+[v EPWM1_LoadDutyValue@dutyValue dutyValue `us  1 p 2 2 ]
 "97
 } 0
 "58 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/interrupt_manager.c
@@ -891,20 +889,4 @@ ECHO_RECEIVED 2
 [v _IOCB4_DefaultInterruptHandler IOCB4_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
 "142
-} 0
-"200 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\main.c
-[v _echoISR echoISR `(v  1 e 1 0 ]
-{
-"207
-} 0
-"102 C:\Users\Owner\Desktop\EENG383\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr0.c
-[v _TMR0_ReadTimer TMR0_ReadTimer `(us  1 e 2 0 ]
-{
-"104
-[v TMR0_ReadTimer@readVal readVal `us  1 a 2 4 ]
-"106
-[v TMR0_ReadTimer@readValHigh readValHigh `uc  1 a 1 7 ]
-"105
-[v TMR0_ReadTimer@readValLow readValLow `uc  1 a 1 6 ]
-"113
 } 0
