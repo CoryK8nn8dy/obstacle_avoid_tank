@@ -24,14 +24,25 @@
 typedef enum  {SEND_TRIGGER, WAIT_ON_ECHO, ECHO_RECEIVED} myISRstates_t;
 myISRstates_t TMR0ISRstate = SEND_TRIGGER;
 
-void myTMR0ISR(void);
+//void myTMR0ISR(void);
+void microSecondDelay(uint16_t us);
+void milliSecondDelay(uint16_t ms);
+//void echoISR(void);
 void goForward(void);
 void goBackward(void);
 void goCW(void);
 void goCCW(void);
 
-uint16_t microSecondDelay = 0;
+//uint16_t microSecondDelay = 0;
 uint16_t distance;
+uint16_t start;
+uint16_t end;
+
+uint8_t echo_received = 0;
+
+// TEMP
+uint16_t i = 0;
+uint16_t j = 0;
 
 //*****************************************************************
 //*****************************************************************
@@ -51,7 +62,8 @@ void main(void) {
     printf("Obstacle-avoiding tank \r\n");   
     printf("\r\n> ");                       // print a nice command prompt
 
-    TMR0_SetInterruptHandler(myTMR0ISR);    
+    //IOCB4_SetInterruptHandler(echoISR);
+    //TMR0_SetInterruptHandler(myTMR0ISR);    
     INTERRUPT_PeripheralInterruptEnable();
     INTERRUPT_GlobalInterruptEnable();
                 
@@ -116,7 +128,7 @@ void main(void) {
                 break;
                 
             case 'r':
-                printf("Current rangefinder value: %u\r\n", distance);
+                    
                 break;
                 
 			//--------------------------------------------
@@ -131,7 +143,8 @@ void main(void) {
     } // end infinite loop    
 } // end 
 
-void myTMR0ISR(void) {
+/*
+ void myTMR0ISR(void) {
         
     switch(TMR0ISRstate) {
         
@@ -160,7 +173,39 @@ void myTMR0ISR(void) {
     
     INTCONbits.TMR0IF = 0;
 }
+ */
 
+
+void echoISR(void) {
+    if (ECHO_GetValue()) {
+        start = TMR0_ReadTimer();
+    } else {
+        end = TMR0_ReadTimer();
+        distance = end - start;
+    }
+    
+}
+
+
+void microSecondDelay(uint16_t us) {  
+
+  uint16_t i;
+    
+  for (i=0; i<us; i++) {
+      asm("NOP");
+      asm("NOP");
+      asm("NOP");
+      
+      i = i;
+  }
+}
+
+void milliSecondDelay(uint16_t ms) {
+    
+    uint16_t i;
+    
+    for(i=0; i<ms; i++) microSecondDelay(1000);
+}
 /**
  End of File
 */
