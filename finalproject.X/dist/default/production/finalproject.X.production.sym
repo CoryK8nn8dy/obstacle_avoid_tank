@@ -606,7 +606,7 @@ bssBANK0 60 BB BANK0 60 1
 %locals
 dist/default/production\finalproject.X.production.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
-C:\Users\k3nn3\AppData\Local\Temp\sqs.s
+C:\Users\k3nn3\AppData\Local\Temp\s4h4.s
 5733 D74 0 CODE 0
 5735 D74 0 CODE 0
 5738 D74 0 CODE 0
@@ -982,7 +982,7 @@ mcc_generated_files/epwm1.c
 93 C7A 0 CODE 0
 96 C92 0 CODE 0
 97 CA8 0 CODE 0
-C:\Users\k3nn3\AppData\Local\Temp\sqs.s
+C:\Users\k3nn3\AppData\Local\Temp\s4h4.s
 10949 8 0 CODE 0
 mcc_generated_files/interrupt_manager.c
 58 8 0 CODE 0
