@@ -56,7 +56,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16161
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 16161: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS800 ~T0 @X0 0 e@4082 ]
-"7362
+"207 ./mcc_generated_files/eusart1.h
+[; ;./mcc_generated_files/eusart1.h: 207: _Bool EUSART1_is_rx_ready(void);
+[v _EUSART1_is_rx_ready `(a ~T0 @X0 0 ef ]
+"322
+[; ;./mcc_generated_files/eusart1.h: 322: uint8_t EUSART1_Read(void);
+[v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
+"7362 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 7362:     struct {
 [s S374 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S374 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
@@ -900,7 +906,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "49
-[; ;main.c: 49:             cmd = 't';
+[; ;main.c: 49: 
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
@@ -959,11 +965,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "71
 [; ;main.c: 71:                 printf("o:      ok\r\n");
-[e $ ! != -> 1 `i -> 0 `i 840  ]
+[e $ ! != -> ( _EUSART1_is_rx_ready ..  `i -> 0 `i 840  ]
 {
-"73
-[; ;main.c: 73: 
-[e = _cmd -> -> 116 `ui `uc ]
+"72
+[; ;main.c: 72:                 break;
+[e = _cmd -> ( _EUSART1_Read ..  `uc ]
 "74
 [; ;main.c: 74: 
 [e $U 842  ]
@@ -1005,16 +1011,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 94:                 } else {
 [e :U 844 ]
 "95
-[; ;main.c: 95: 
+[; ;main.c: 95:                     motorsToggled = 1;
 [e ( _printf :s 14C ]
 "96
 [; ;main.c: 96:                     do { LATBbits.LATB6 = 1; } while(0);
 [e $U 841  ]
 "101
-[; ;main.c: 101:                     EPWM1_LoadDutyValue(128);
+[; ;main.c: 101:                     EPWM1_LoadDutyValue(10);
 [e :U 845 ]
 "102
-[; ;main.c: 102:                     EPWM2_LoadDutyValue(128);
+[; ;main.c: 102:                     EPWM2_LoadDutyValue(10);
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 40 `i 846  ]
@@ -1072,6 +1078,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 858  ]
 [e :U 854 ]
 {
+"119
+[e = _motorsToggled -> -> 1 `i `uc ]
 "120
 [e :U 861 ]
 {
@@ -1103,9 +1111,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 872 ]
 "125
-[e ( _EPWM1_LoadDutyValue (1 -> -> 128 `i `us ]
+[e ( _EPWM1_LoadDutyValue (1 -> -> 10 `i `us ]
 "126
-[e ( _EPWM2_LoadDutyValue (1 -> -> 128 `i `us ]
+[e ( _EPWM2_LoadDutyValue (1 -> -> 10 `i `us ]
 "127
 [e ( _printf :s 18C ]
 "128

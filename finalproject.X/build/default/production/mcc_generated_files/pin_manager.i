@@ -9166,9 +9166,9 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    ANSELC = 0x3C;
-    ANSELB = 0x2F;
-    ANSELA = 0x2F;
+    ANSELC = 0x38;
+    ANSELB = 0x0F;
+    ANSELA = 0x2D;
 
 
 

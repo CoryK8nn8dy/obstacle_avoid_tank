@@ -9568,9 +9568,9 @@ void main(void) {
     (INTCONbits.GIE = 1);
 
  for(;;) {
-  if (1) {
+  if ((EUSART1_is_rx_ready())) {
+            cmd = EUSART1_Read();
 
-            cmd = 't';
    switch (cmd) {
 
 
@@ -9616,14 +9616,14 @@ void main(void) {
                     do { LATAbits.LATA0 = 0; } while(0);
                     printf("Motors toggled off.\r\n");
                 } else {
-
+                    motorsToggled = 1;
                     do { LATBbits.LATB6 = 1; } while(0);
                     do { LATBbits.LATB7 = 0; } while(0);
                     do { LATBbits.LATB5 = 1; } while(0);
                     do { LATAbits.LATA1 = 0; } while(0);
                     do { LATAbits.LATA0 = 1; } while(0);
-                    EPWM1_LoadDutyValue(128);
-                    EPWM2_LoadDutyValue(128);
+                    EPWM1_LoadDutyValue(10);
+                    EPWM2_LoadDutyValue(10);
                     printf("Motors toggled on.\r\n");
                 }
 

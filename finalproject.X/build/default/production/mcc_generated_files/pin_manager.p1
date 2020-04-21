@@ -857,14 +857,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 71:     TRISC = 0xB9;
 [e = _TRISC -> -> 185 `i `uc ]
 "76
-[; ;mcc_generated_files/pin_manager.c: 76:     ANSELC = 0x3C;
-[e = _ANSELC -> -> 60 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 76:     ANSELC = 0x38;
+[e = _ANSELC -> -> 56 `i `uc ]
 "77
-[; ;mcc_generated_files/pin_manager.c: 77:     ANSELB = 0x2F;
-[e = _ANSELB -> -> 47 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 77:     ANSELB = 0x0F;
+[e = _ANSELB -> -> 15 `i `uc ]
 "78
-[; ;mcc_generated_files/pin_manager.c: 78:     ANSELA = 0x2F;
-[e = _ANSELA -> -> 47 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 78:     ANSELA = 0x2D;
+[e = _ANSELA -> -> 45 `i `uc ]
 "83
 [; ;mcc_generated_files/pin_manager.c: 83:     WPUB = 0x00;
 [e = _WPUB -> -> 0 `i `uc ]

@@ -24,7 +24,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "67
 [p x PBADEN = ON ]
 "68
-[p x CCP3MX = PORTB5 ]
+[p x CCP3MX = PORTC6 ]
 "69
 [p x HFOFST = ON ]
 "70

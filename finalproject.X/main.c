@@ -68,9 +68,9 @@ void main(void) {
     INTERRUPT_GlobalInterruptEnable();
                 
 	for(;;) {
-		if (1) {//(EUSART1_DataReady) {			// wait for incoming data on USART
-            //cmd = EUSART1_Read();
-            cmd = 't';
+		if (EUSART1_DataReady) {			// wait for incoming data on USART
+            cmd = EUSART1_Read();
+            
 			switch (cmd) {		// and do what it tells you to do
 
 			//--------------------------------------------
@@ -116,14 +116,14 @@ void main(void) {
                     STBY_SetLow();
                     printf("Motors toggled off.\r\n");
                 } else {
-                    //motorsToggled = 1;                    
+                    motorsToggled = 1;                    
                     MOTORA1_SetHigh();
                     MOTORA2_SetLow();
                     MOTORB1_SetHigh();
                     MOTORB2_SetLow();                 
                     STBY_SetHigh();
-                    EPWM1_LoadDutyValue(128);
-                    EPWM2_LoadDutyValue(128);
+                    EPWM1_LoadDutyValue(10);
+                    EPWM2_LoadDutyValue(10);
                     printf("Motors toggled on.\r\n");
                 }
                 
