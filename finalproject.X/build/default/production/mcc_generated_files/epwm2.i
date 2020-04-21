@@ -9237,7 +9237,7 @@ void EPWM2_Initialize(void)
  CCPR2H = 0x00;
 
 
- CCPR2L = 0x7F;
+ CCPR2L = 0x1F;
 
 
  CCPTMRS0bits.C2TSEL = 0x0;

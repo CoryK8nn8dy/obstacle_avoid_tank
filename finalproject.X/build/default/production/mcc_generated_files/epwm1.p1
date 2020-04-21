@@ -791,8 +791,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/epwm1.c: 81:  CCPR1H = 0x00;
 [e = _CCPR1H -> -> 0 `i `uc ]
 "84
-[; ;mcc_generated_files/epwm1.c: 84:  CCPR1L = 0x7F;
-[e = _CCPR1L -> -> 127 `i `uc ]
+[; ;mcc_generated_files/epwm1.c: 84:  CCPR1L = 0x1F;
+[e = _CCPR1L -> -> 31 `i `uc ]
 "87
 [; ;mcc_generated_files/epwm1.c: 87:  CCPTMRS0bits.C1TSEL = 0x0;
 [e = . . _CCPTMRS0bits 0 0 -> -> 0 `i `uc ]

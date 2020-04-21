@@ -94,21 +94,18 @@
 #define MOTORB2_SetDigitalMode()     do { ANSELAbits.ANSA1 = 0; } while(0)
 
 // get/set TRIGGER aliases
-#define TRIGGER_TRIS                 TRISBbits.TRISB2
-#define TRIGGER_LAT                  LATBbits.LATB2
-#define TRIGGER_PORT                 PORTBbits.RB2
-#define TRIGGER_WPU                  WPUBbits.WPUB2
-#define TRIGGER_ANS                  ANSELBbits.ANSB2
-#define TRIGGER_SetHigh()            do { LATBbits.LATB2 = 1; } while(0)
-#define TRIGGER_SetLow()             do { LATBbits.LATB2 = 0; } while(0)
-#define TRIGGER_Toggle()             do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0)
-#define TRIGGER_GetValue()           PORTBbits.RB2
-#define TRIGGER_SetDigitalInput()    do { TRISBbits.TRISB2 = 1; } while(0)
-#define TRIGGER_SetDigitalOutput()   do { TRISBbits.TRISB2 = 0; } while(0)
-#define TRIGGER_SetPullup()          do { WPUBbits.WPUB2 = 1; } while(0)
-#define TRIGGER_ResetPullup()        do { WPUBbits.WPUB2 = 0; } while(0)
-#define TRIGGER_SetAnalogMode()      do { ANSELBbits.ANSB2 = 1; } while(0)
-#define TRIGGER_SetDigitalMode()     do { ANSELBbits.ANSB2 = 0; } while(0)
+#define TRIGGER_TRIS                 TRISAbits.TRISA5
+#define TRIGGER_LAT                  LATAbits.LATA5
+#define TRIGGER_PORT                 PORTAbits.RA5
+#define TRIGGER_ANS                  ANSELAbits.ANSA5
+#define TRIGGER_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
+#define TRIGGER_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
+#define TRIGGER_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
+#define TRIGGER_GetValue()           PORTAbits.RA5
+#define TRIGGER_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
+#define TRIGGER_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
+#define TRIGGER_SetAnalogMode()      do { ANSELAbits.ANSA5 = 1; } while(0)
+#define TRIGGER_SetDigitalMode()     do { ANSELAbits.ANSA5 = 0; } while(0)
 
 // get/set ECHO aliases
 #define ECHO_TRIS                 TRISBbits.TRISB4

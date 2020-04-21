@@ -21,28 +21,16 @@
 #pragma warning disable 520     
 #pragma warning disable 1498
 
-typedef enum  {SEND_TRIGGER, WAIT_ON_ECHO, ECHO_RECEIVED} myISRstates_t;
-myISRstates_t TMR0ISRstate = SEND_TRIGGER;
-
-//void myTMR0ISR(void);
-void microSecondDelay(uint16_t us);
-void milliSecondDelay(uint16_t ms);
+void myTMR0ISR(void);
 void echoISR(void);
 void goForward(void);
 void goBackward(void);
 void goCW(void);
 void goCCW(void);
 
-//uint16_t microSecondDelay = 0;
 uint16_t distance;
 uint16_t start;
 uint16_t end;
-
-uint8_t echo_received = 0;
-
-// TEMP
-uint16_t tmri = 0;
-uint16_t tmrj = 0;
 
 //*****************************************************************
 //*****************************************************************
@@ -50,6 +38,8 @@ void main(void) {
     char    cmd;
     uint8_t i;
     uint8_t motorsToggled = 0;
+    uint16_t tmri;
+    uint16_t tmrj;
     
     SYSTEM_Initialize();
     
@@ -62,15 +52,14 @@ void main(void) {
     printf("Obstacle-avoiding tank \r\n");   
     printf("\r\n> ");                       // print a nice command prompt
 
+    //TMR0_SetInterruptHandler(myTMR0ISR);
     IOCB4_SetInterruptHandler(echoISR);
-    //TMR0_SetInterruptHandler(myTMR0ISR);    
     INTERRUPT_PeripheralInterruptEnable();
     INTERRUPT_GlobalInterruptEnable();
                 
 	for(;;) {
 		if (EUSART1_DataReady) {			// wait for incoming data on USART
             cmd = EUSART1_Read();
-            
 			switch (cmd) {		// and do what it tells you to do
 
 			//--------------------------------------------
@@ -122,40 +111,27 @@ void main(void) {
                     MOTORB1_SetHigh();
                     MOTORB2_SetLow();                 
                     STBY_SetHigh();
-                    EPWM1_LoadDutyValue(10);
-                    EPWM2_LoadDutyValue(10);
+                    EPWM1_LoadDutyValue(128);
+                    EPWM2_LoadDutyValue(128);
                     printf("Motors toggled on.\r\n");
                 }
                 
                 break;
                 
             case 'r':
-
-
+                
                 TRIGGER_SetHigh();
                 INTCONbits.TMR0IF = 0;
                 TMR0_WriteTimer(0x10000 - 10);
                 while(INTCONbits.TMR0IF == 0);
                 TRIGGER_SetLow();
 
-                /*
-                 printf("Trigger is now low.\r\n");
-                for(tmri = 0; tmri<316; tmri++) {
-                    for(tmrj = 0; tmrj<316; tmrj++) {
-                        INTCONbits.TMR0IF = 0;
-                        TMR0_WriteTimer(0x10000 - 10);
-                        while(INTCONbits.TMR0IF == 0);
-                    }
-                }
-                 */
-                    
-
                 printf("Distance = %u\r\n", distance);
 
                 break;
                 
             case 'c':
-                printf("Entering for loop...\r\n");
+                printf("Entering one-second delay...\r\n");
                 for(tmri = 0; tmri<316; tmri++) {
                     for(tmrj = 0; tmrj<316; tmrj++) {
                         INTCONbits.TMR0IF = 0;
@@ -163,7 +139,7 @@ void main(void) {
                         while(INTCONbits.TMR0IF == 0);
                     }
                 } 
-                printf("Exited for loop.\r\n");
+                printf("Exited delay.\r\n");
                 break;
                 
 			//--------------------------------------------
@@ -176,42 +152,11 @@ void main(void) {
             
 		}	// end if
     } // end infinite loop    
-} // end 
-
-/*
- void myTMR0ISR(void) {
-        
-    switch(TMR0ISRstate) {
-        
-        case SEND_TRIGGER:
-            TRIGGER_SetHigh();
-            TMR0ISRstate = WAIT_ON_ECHO;
-            TMR0_WriteTimer(0x10000 - 10); //10 us delay
-            break;
-               
-        case WAIT_ON_ECHO:
-            TRIGGER_SetLow();
-            microSecondDelay += 10;
-            if ((ECHO_GetValue() == 1) || (microSecondDelay > 23500)) {
-                TMR0ISRstate = ECHO_RECEIVED;
-            }
-            TMR0_WriteTimer(0x10000 - 10); //10 us delay
-            break;
-            
-        case ECHO_RECEIVED:
-            distance = microSecondDelay;
-            microSecondDelay = 0;
-            TMR0ISRstate = SEND_TRIGGER;
-            TMR0_WriteTimer(0x10000 - 30000); //30 ms delay to allow echo to go low
-            break;
-    }
-    
-    INTCONbits.TMR0IF = 0;
-}
- */
-
+} // end main
 
 void echoISR(void) {
+    //static uint16_t lastTimer;
+    //static uint16_t currentTimer;
     if (ECHO_GetValue()) {
         start = TMR0_ReadTimer();
     } else {
@@ -220,26 +165,6 @@ void echoISR(void) {
     }
 }
 
-
-void microSecondDelay(uint16_t us) {  
-
-  uint16_t i;
-    
-  for (i=0; i<us; i++) {
-      asm("NOP");
-      asm("NOP");
-      asm("NOP");
-      
-      i = i;
-  }
-}
-
-void milliSecondDelay(uint16_t ms) {
-    
-    uint16_t i;
-    
-    for(i=0; i<ms; i++) microSecondDelay(1000);
-}
 /**
  End of File
 */

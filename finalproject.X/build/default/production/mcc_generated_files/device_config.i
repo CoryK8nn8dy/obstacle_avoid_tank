@@ -26,7 +26,7 @@
 
 #pragma config CCP2MX = PORTC1
 #pragma config PBADEN = ON
-#pragma config CCP3MX = PORTC6
+#pragma config CCP3MX = PORTB5
 #pragma config HFOFST = ON
 #pragma config T3CMX = PORTC0
 #pragma config P2BMX = PORTB5

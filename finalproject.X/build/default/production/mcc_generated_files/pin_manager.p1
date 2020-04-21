@@ -61,11 +61,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 2689: extern volatile IOCBbits_t IOCBbits __attribute__((address(0xF62)));
 [v _IOCBbits `VS134 ~T0 @X0 0 e@3938 ]
 [v F5720 `(v ~T0 @X0 0 tf ]
-"271 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 271: void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void));
+"268 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 268: void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _IOCB4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F5720 ]
-"319
-[; ;mcc_generated_files/pin_manager.h: 319: void IOCB4_DefaultInterruptHandler(void);
+"316
+[; ;mcc_generated_files/pin_manager.h: 316: void IOCB4_DefaultInterruptHandler(void);
 [v _IOCB4_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
 "16135 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 16135:     struct {
@@ -86,8 +86,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16161
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 16161: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS800 ~T0 @X0 0 e@4082 ]
-"248 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 248: void IOCB4_ISR(void);
+"245 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 245: void IOCB4_ISR(void);
 [v _IOCB4_ISR `(v ~T0 @X0 0 ef ]
 [v F5732 `(v ~T0 @X0 0 tf ]
 [v F5734 `(v ~T0 @X0 0 tf ]
@@ -848,11 +848,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 64:     LATC = 0x00;
 [e = _LATC -> -> 0 `i `uc ]
 "69
-[; ;mcc_generated_files/pin_manager.c: 69:     TRISA = 0xFC;
-[e = _TRISA -> -> 252 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 69:     TRISA = 0xDC;
+[e = _TRISA -> -> 220 `i `uc ]
 "70
-[; ;mcc_generated_files/pin_manager.c: 70:     TRISB = 0x1B;
-[e = _TRISB -> -> 27 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 70:     TRISB = 0x1F;
+[e = _TRISB -> -> 31 `i `uc ]
 "71
 [; ;mcc_generated_files/pin_manager.c: 71:     TRISC = 0xB9;
 [e = _TRISC -> -> 185 `i `uc ]

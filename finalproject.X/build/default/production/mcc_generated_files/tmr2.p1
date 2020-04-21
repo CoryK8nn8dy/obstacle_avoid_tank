@@ -782,8 +782,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _TMR2_Initialize ]
 [f ]
 "67
-[; ;mcc_generated_files/tmr2.c: 67:     PR2 = 0xFF;
-[e = _PR2 -> -> 255 `i `uc ]
+[; ;mcc_generated_files/tmr2.c: 67:     PR2 = 0x3F;
+[e = _PR2 -> -> 63 `i `uc ]
 "70
 [; ;mcc_generated_files/tmr2.c: 70:     TMR2 = 0x00;
 [e = _TMR2 -> -> 0 `i `uc ]
@@ -791,8 +791,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/tmr2.c: 73:     PIR1bits.TMR2IF = 0;
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 "76
-[; ;mcc_generated_files/tmr2.c: 76:     T2CON = 0x04;
-[e = _T2CON -> -> 4 `i `uc ]
+[; ;mcc_generated_files/tmr2.c: 76:     T2CON = 0x06;
+[e = _T2CON -> -> 6 `i `uc ]
 "77
 [; ;mcc_generated_files/tmr2.c: 77: }
 [e :UE 829 ]

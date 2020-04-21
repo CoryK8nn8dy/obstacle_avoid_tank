@@ -9131,17 +9131,17 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 223 "./mcc_generated_files/pin_manager.h"
+# 220 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 235 "./mcc_generated_files/pin_manager.h"
+# 232 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 248 "./mcc_generated_files/pin_manager.h"
+# 245 "./mcc_generated_files/pin_manager.h"
 void IOCB4_ISR(void);
-# 271 "./mcc_generated_files/pin_manager.h"
+# 268 "./mcc_generated_files/pin_manager.h"
 void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void));
-# 295 "./mcc_generated_files/pin_manager.h"
+# 292 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCB4_InterruptHandler)(void);
-# 319 "./mcc_generated_files/pin_manager.h"
+# 316 "./mcc_generated_files/pin_manager.h"
 void IOCB4_DefaultInterruptHandler(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -9521,28 +9521,16 @@ void OSCILLATOR_Initialize(void);
 #pragma warning disable 520
 #pragma warning disable 1498
 
-typedef enum {SEND_TRIGGER, WAIT_ON_ECHO, ECHO_RECEIVED} myISRstates_t;
-myISRstates_t TMR0ISRstate = SEND_TRIGGER;
-
-
-void microSecondDelay(uint16_t us);
-void milliSecondDelay(uint16_t ms);
+void myTMR0ISR(void);
 void echoISR(void);
 void goForward(void);
 void goBackward(void);
 void goCW(void);
 void goCCW(void);
 
-
 uint16_t distance;
 uint16_t start;
 uint16_t end;
-
-uint8_t echo_received = 0;
-
-
-uint16_t tmri = 0;
-uint16_t tmrj = 0;
 
 
 
@@ -9550,6 +9538,8 @@ void main(void) {
     char cmd;
     uint8_t i;
     uint8_t motorsToggled = 0;
+    uint16_t tmri;
+    uint16_t tmrj;
 
     SYSTEM_Initialize();
 
@@ -9562,15 +9552,14 @@ void main(void) {
     printf("Obstacle-avoiding tank \r\n");
     printf("\r\n> ");
 
-    IOCB4_SetInterruptHandler(echoISR);
 
+    IOCB4_SetInterruptHandler(echoISR);
     (INTCONbits.PEIE = 1);
     (INTCONbits.GIE = 1);
 
  for(;;) {
   if ((EUSART1_is_rx_ready())) {
             cmd = EUSART1_Read();
-
    switch (cmd) {
 
 
@@ -9622,8 +9611,8 @@ void main(void) {
                     do { LATBbits.LATB5 = 1; } while(0);
                     do { LATAbits.LATA1 = 0; } while(0);
                     do { LATAbits.LATA0 = 1; } while(0);
-                    EPWM1_LoadDutyValue(10);
-                    EPWM2_LoadDutyValue(10);
+                    EPWM1_LoadDutyValue(128);
+                    EPWM2_LoadDutyValue(128);
                     printf("Motors toggled on.\r\n");
                 }
 
@@ -9631,19 +9620,18 @@ void main(void) {
 
             case 'r':
 
-
-                do { LATBbits.LATB2 = 1; } while(0);
+                do { LATAbits.LATA5 = 1; } while(0);
                 INTCONbits.TMR0IF = 0;
                 TMR0_WriteTimer(0x10000 - 10);
                 while(INTCONbits.TMR0IF == 0);
-                do { LATBbits.LATB2 = 0; } while(0);
-# 153 "main.c"
+                do { LATAbits.LATA5 = 0; } while(0);
+
                 printf("Distance = %u\r\n", distance);
 
                 break;
 
             case 'c':
-                printf("Entering for loop...\r\n");
+                printf("Entering one-second delay...\r\n");
                 for(tmri = 0; tmri<316; tmri++) {
                     for(tmrj = 0; tmrj<316; tmrj++) {
                         INTCONbits.TMR0IF = 0;
@@ -9651,7 +9639,7 @@ void main(void) {
                         while(INTCONbits.TMR0IF == 0);
                     }
                 }
-                printf("Exited for loop.\r\n");
+                printf("Exited delay.\r\n");
                 break;
 
 
@@ -9665,33 +9653,14 @@ void main(void) {
   }
     }
 }
-# 214 "main.c"
+
 void echoISR(void) {
+
+
     if (PORTBbits.RB4) {
         start = TMR0_ReadTimer();
     } else {
         end = TMR0_ReadTimer();
         distance = end - start;
     }
-}
-
-
-void microSecondDelay(uint16_t us) {
-
-  uint16_t i;
-
-  for (i=0; i<us; i++) {
-      __asm("NOP");
-      __asm("NOP");
-      __asm("NOP");
-
-      i = i;
-  }
-}
-
-void milliSecondDelay(uint16_t ms) {
-
-    uint16_t i;
-
-    for(i=0; i<ms; i++) microSecondDelay(1000);
 }
