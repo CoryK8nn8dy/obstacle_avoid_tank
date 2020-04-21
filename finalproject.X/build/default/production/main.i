@@ -9568,8 +9568,9 @@ void main(void) {
     (INTCONbits.GIE = 1);
 
  for(;;) {
-  if ((EUSART1_is_rx_ready())) {
-            cmd = EUSART1_Read();
+  if (1) {
+
+            cmd = 't';
    switch (cmd) {
 
 
@@ -9615,7 +9616,7 @@ void main(void) {
                     do { LATAbits.LATA0 = 0; } while(0);
                     printf("Motors toggled off.\r\n");
                 } else {
-                    motorsToggled = 1;
+
                     do { LATBbits.LATB6 = 1; } while(0);
                     do { LATBbits.LATB7 = 0; } while(0);
                     do { LATBbits.LATB5 = 1; } while(0);
@@ -9630,12 +9631,13 @@ void main(void) {
 
             case 'r':
 
+
                 do { LATBbits.LATB2 = 1; } while(0);
                 INTCONbits.TMR0IF = 0;
                 TMR0_WriteTimer(0x10000 - 10);
                 while(INTCONbits.TMR0IF == 0);
                 do { LATBbits.LATB2 = 0; } while(0);
-
+# 153 "main.c"
                 printf("Distance = %u\r\n", distance);
 
                 break;
@@ -9663,7 +9665,7 @@ void main(void) {
   }
     }
 }
-# 200 "main.c"
+# 214 "main.c"
 void echoISR(void) {
     if (PORTBbits.RB4) {
         start = TMR0_ReadTimer();

@@ -68,8 +68,9 @@ void main(void) {
     INTERRUPT_GlobalInterruptEnable();
                 
 	for(;;) {
-		if (EUSART1_DataReady) {			// wait for incoming data on USART
-            cmd = EUSART1_Read();
+		if (1) {//(EUSART1_DataReady) {			// wait for incoming data on USART
+            //cmd = EUSART1_Read();
+            cmd = 't';
 			switch (cmd) {		// and do what it tells you to do
 
 			//--------------------------------------------
@@ -115,7 +116,7 @@ void main(void) {
                     STBY_SetLow();
                     printf("Motors toggled off.\r\n");
                 } else {
-                    motorsToggled = 1;                    
+                    //motorsToggled = 1;                    
                     MOTORA1_SetHigh();
                     MOTORA2_SetLow();
                     MOTORB1_SetHigh();
@@ -129,12 +130,25 @@ void main(void) {
                 break;
                 
             case 'r':
-                
+
+
                 TRIGGER_SetHigh();
                 INTCONbits.TMR0IF = 0;
                 TMR0_WriteTimer(0x10000 - 10);
                 while(INTCONbits.TMR0IF == 0);
                 TRIGGER_SetLow();
+
+                /*
+                 printf("Trigger is now low.\r\n");
+                for(tmri = 0; tmri<316; tmri++) {
+                    for(tmrj = 0; tmrj<316; tmrj++) {
+                        INTCONbits.TMR0IF = 0;
+                        TMR0_WriteTimer(0x10000 - 10);
+                        while(INTCONbits.TMR0IF == 0);
+                    }
+                }
+                 */
+                    
 
                 printf("Distance = %u\r\n", distance);
 
