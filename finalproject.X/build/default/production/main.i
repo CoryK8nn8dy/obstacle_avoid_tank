@@ -9524,9 +9524,9 @@ void OSCILLATOR_Initialize(void);
 void myTMR0ISR(void);
 void echoISR(void);
 void goForward(void);
-void goBackward(void);
-void goCW(void);
 void goCCW(void);
+void quarterSecondDelay(void);
+
 
 uint16_t distance;
 uint16_t start;
@@ -9538,8 +9538,7 @@ void main(void) {
     char cmd;
     uint8_t i;
     uint8_t motorsToggled = 0;
-    uint16_t tmri;
-    uint16_t tmrj;
+    uint8_t consecutiveReadings = 0;
 
     SYSTEM_Initialize();
 
@@ -9558,8 +9557,10 @@ void main(void) {
     (INTCONbits.GIE = 1);
 
  for(;;) {
-  if ((EUSART1_is_rx_ready())) {
-            cmd = EUSART1_Read();
+
+        if (1) {
+
+            cmd = 'A';
    switch (cmd) {
 
 
@@ -9606,10 +9607,7 @@ void main(void) {
                     printf("Motors toggled off.\r\n");
                 } else {
                     motorsToggled = 1;
-                    do { LATBbits.LATB6 = 1; } while(0);
-                    do { LATBbits.LATB7 = 0; } while(0);
-                    do { LATBbits.LATB5 = 1; } while(0);
-                    do { LATAbits.LATA1 = 0; } while(0);
+                    goForward();
                     do { LATAbits.LATA0 = 1; } while(0);
                     EPWM1_LoadDutyValue(128);
                     EPWM2_LoadDutyValue(128);
@@ -9632,14 +9630,49 @@ void main(void) {
 
             case 'c':
                 printf("Entering one-second delay...\r\n");
-                for(tmri = 0; tmri<316; tmri++) {
-                    for(tmrj = 0; tmrj<316; tmrj++) {
-                        INTCONbits.TMR0IF = 0;
-                        TMR0_WriteTimer(0x10000 - 10);
-                        while(INTCONbits.TMR0IF == 0);
-                    }
-                }
+                quarterSecondDelay();
+                quarterSecondDelay();
+                quarterSecondDelay();
+                quarterSecondDelay();
                 printf("Exited delay.\r\n");
+                break;
+
+            case 'A':
+                do { LATAbits.LATA0 = 0; } while(0);
+                EPWM1_LoadDutyValue(200);
+                EPWM2_LoadDutyValue(200);
+
+                while(1) {
+
+                    do { LATAbits.LATA5 = 1; } while(0);
+                    INTCONbits.TMR0IF = 0;
+                    TMR0_WriteTimer(0x10000 - 10);
+                    while(INTCONbits.TMR0IF == 0);
+                    do { LATAbits.LATA5 = 0; } while(0);
+
+                    if (distance <= 1800){
+                        consecutiveReadings += 1;
+                    } else {
+                        consecutiveReadings = 0;
+                    }
+
+                    if (consecutiveReadings >= 3) {
+                        do { LATAbits.LATA0 = 0; } while(0);
+                        goCCW();
+                        do { LATAbits.LATA0 = 1; } while(0);
+                        quarterSecondDelay();
+                        quarterSecondDelay();
+                    } else {
+                        do { LATAbits.LATA0 = 0; } while(0);
+                        goForward();
+                        do { LATAbits.LATA0 = 1; } while(0);
+                    }
+
+                    quarterSecondDelay();
+
+                }
+
+
                 break;
 
 
@@ -9662,5 +9695,30 @@ void echoISR(void) {
     } else {
         end = TMR0_ReadTimer();
         distance = end - start;
+    }
+}
+
+void goForward(void) {
+    do { LATBbits.LATB6 = 1; } while(0);
+    do { LATBbits.LATB7 = 0; } while(0);
+    do { LATBbits.LATB5 = 1; } while(0);
+    do { LATAbits.LATA1 = 0; } while(0);
+}
+
+void goCCW(void) {
+    do { LATBbits.LATB6 = 1; } while(0);
+    do { LATBbits.LATB7 = 0; } while(0);
+    do { LATBbits.LATB5 = 0; } while(0);
+    do { LATAbits.LATA1 = 1; } while(0);
+}
+
+void quarterSecondDelay(void) {
+    uint16_t tmri, tmrj;
+    for(tmri = 0; tmri<158; tmri++) {
+        for(tmrj = 0; tmrj<158; tmrj++) {
+            INTCONbits.TMR0IF = 0;
+            TMR0_WriteTimer(0x10000 - 10);
+            while(INTCONbits.TMR0IF == 0);
+        }
     }
 }

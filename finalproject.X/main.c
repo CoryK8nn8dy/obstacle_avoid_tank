@@ -24,9 +24,9 @@
 void myTMR0ISR(void);
 void echoISR(void);
 void goForward(void);
-void goBackward(void);
-void goCW(void);
 void goCCW(void);
+void quarterSecondDelay(void);
+
 
 uint16_t distance;
 uint16_t start;
@@ -38,8 +38,7 @@ void main(void) {
     char    cmd;
     uint8_t i;
     uint8_t motorsToggled = 0;
-    uint16_t tmri;
-    uint16_t tmrj;
+    uint8_t consecutiveReadings = 0;
     
     SYSTEM_Initialize();
     
@@ -58,8 +57,10 @@ void main(void) {
     INTERRUPT_GlobalInterruptEnable();
                 
 	for(;;) {
-		if (EUSART1_DataReady) {			// wait for incoming data on USART
-            cmd = EUSART1_Read();
+		//if (EUSART1_DataReady) {			// wait for incoming data on USART
+        if (1) {
+            //cmd = EUSART1_Read();
+            cmd = 'A';
 			switch (cmd) {		// and do what it tells you to do
 
 			//--------------------------------------------
@@ -106,10 +107,7 @@ void main(void) {
                     printf("Motors toggled off.\r\n");
                 } else {
                     motorsToggled = 1;                    
-                    MOTORA1_SetHigh();
-                    MOTORA2_SetLow();
-                    MOTORB1_SetHigh();
-                    MOTORB2_SetLow();                 
+                    goForward();             
                     STBY_SetHigh();
                     EPWM1_LoadDutyValue(128);
                     EPWM2_LoadDutyValue(128);
@@ -132,14 +130,49 @@ void main(void) {
                 
             case 'c':
                 printf("Entering one-second delay...\r\n");
-                for(tmri = 0; tmri<316; tmri++) {
-                    for(tmrj = 0; tmrj<316; tmrj++) {
-                        INTCONbits.TMR0IF = 0;
-                        TMR0_WriteTimer(0x10000 - 10);
-                        while(INTCONbits.TMR0IF == 0);
-                    }
-                } 
+                quarterSecondDelay();
+                quarterSecondDelay();
+                quarterSecondDelay();
+                quarterSecondDelay();
                 printf("Exited delay.\r\n");
+                break;
+                
+            case 'A':
+                STBY_SetLow();
+                EPWM1_LoadDutyValue(200);
+                EPWM2_LoadDutyValue(200);
+                
+                while(1) {
+                    // send a 10 us pulse on trigger
+                    TRIGGER_SetHigh();
+                    INTCONbits.TMR0IF = 0;
+                    TMR0_WriteTimer(0x10000 - 10);
+                    while(INTCONbits.TMR0IF == 0);
+                    TRIGGER_SetLow();
+                    
+                    if (distance <= 1800){
+                        consecutiveReadings += 1;
+                    } else {
+                        consecutiveReadings = 0;
+                    }
+                    
+                    if (consecutiveReadings >= 3) {
+                        STBY_SetLow();
+                        goCCW();
+                        STBY_SetHigh();
+                        quarterSecondDelay();
+                        quarterSecondDelay();
+                    } else {
+                        STBY_SetLow();
+                        goForward();
+                        STBY_SetHigh();
+                    }
+                    
+                    quarterSecondDelay();
+                    
+                }             
+                
+               
                 break;
                 
 			//--------------------------------------------
@@ -163,6 +196,31 @@ void echoISR(void) {
         end = TMR0_ReadTimer();
         distance = end - start;
     }
+}
+
+void goForward(void) {
+    MOTORA1_SetHigh();
+    MOTORA2_SetLow();
+    MOTORB1_SetHigh();
+    MOTORB2_SetLow(); 
+}
+
+void goCCW(void) {
+    MOTORA1_SetHigh();
+    MOTORA2_SetLow();
+    MOTORB1_SetLow();
+    MOTORB2_SetHigh();
+}
+
+void quarterSecondDelay(void) {
+    uint16_t tmri, tmrj;
+    for(tmri = 0; tmri<158; tmri++) {
+        for(tmrj = 0; tmrj<158; tmrj++) {
+            INTCONbits.TMR0IF = 0;
+            TMR0_WriteTimer(0x10000 - 10);
+            while(INTCONbits.TMR0IF == 0);
+        }
+    } 
 }
 
 /**

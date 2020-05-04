@@ -31,7 +31,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./mcc_generated_files/pin_manager.h: 268: void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _IOCB4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F5720 ]
 "25 main.c
-[; ;main.c: 25: 
+[; ;main.c: 25:     printf("Development Board\r\n");
 [v _echoISR `(v ~T0 @X0 0 ef ]
 "16135 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 16135:     struct {
@@ -52,30 +52,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16161
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 16161: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS800 ~T0 @X0 0 e@4082 ]
-"207 ./mcc_generated_files/eusart1.h
-[; ;./mcc_generated_files/eusart1.h: 207: _Bool EUSART1_is_rx_ready(void);
-[v _EUSART1_is_rx_ready `(a ~T0 @X0 0 ef ]
-"322
-[; ;./mcc_generated_files/eusart1.h: 322: uint8_t EUSART1_Read(void);
-[v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
-"7362 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 7362:     struct {
-[s S374 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S374 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"7372
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 7372:     struct {
-[s S375 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S375 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
-"7361
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 7361: typedef union {
-[u S373 `S374 1 `S375 1 ]
-[n S373 . . . ]
-"7383
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 7383: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
-[v _LATBbits `VS373 ~T0 @X0 0 e@3978 ]
+"26 main.c
+[; ;main.c: 26:     printf("Final project terminal \r\n");
+[v _goForward `(v ~T0 @X0 0 ef ]
 "236 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 236: void TMR0_WriteTimer(uint16_t timerVal);
 [v _TMR0_WriteTimer `(v ~T0 @X0 0 ef1`us ]
+"28 main.c
+[; ;main.c: 28:     printf("\r\n> ");
+[v _quarterSecondDelay `(v ~T0 @X0 0 ef ]
+"27
+[; ;main.c: 27:     printf("Obstacle-avoiding tank \r\n");
+[v _goCCW `(v ~T0 @X0 0 ef ]
 "6471 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 6471:     struct {
 [s S342 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -126,6 +114,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "197 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 197: uint16_t TMR0_ReadTimer(void);
 [v _TMR0_ReadTimer `(us ~T0 @X0 0 ef ]
+"7362 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 7362:     struct {
+[s S374 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S374 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"7372
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 7372:     struct {
+[s S375 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S375 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"7361
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 7361: typedef union {
+[u S373 `S374 1 `S375 1 ]
+[n S373 . . . ]
+"7383
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 7383: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
+[v _LATBbits `VS373 ~T0 @X0 0 e@3978 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -862,143 +865,141 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h: 16609: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "21 main.c
-[; ;main.c: 21: 
+[; ;main.c: 21:     do { LATAbits.LATA0 = 0; } while(0);
 [p n 520 ]
 "22
-[; ;main.c: 22:     do { LATAbits.LATA0 = 0; } while(0);
+[; ;main.c: 22:     EPWM1_LoadDutyValue(255);
 [p n 1498 ]
 "31
-[; ;main.c: 31: 
+[; ;main.c: 31:     IOCB4_SetInterruptHandler(echoISR);
 [v _distance `us ~T0 @X0 1 e ]
 "32
-[; ;main.c: 32:     IOCB4_SetInterruptHandler(echoISR);
+[; ;main.c: 32:     (INTCONbits.PEIE = 1);
 [v _start `us ~T0 @X0 1 e ]
 "33
-[; ;main.c: 33:     (INTCONbits.PEIE = 1);
+[; ;main.c: 33:     (INTCONbits.GIE = 1);
 [v _end `us ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "37
-[; ;main.c: 37:   if ((EUSART1_is_rx_ready())) {
+[; ;main.c: 37:         if (1) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
 "38
-[; ;main.c: 38:             cmd = EUSART1_Read();
+[; ;main.c: 38: 
 [v _cmd `uc ~T0 @X0 1 a ]
 "39
-[; ;main.c: 39:    switch (cmd) {
+[; ;main.c: 39:             cmd = 'A';
 [v _i `uc ~T0 @X0 1 a ]
 "40
-[; ;main.c: 40: 
+[; ;main.c: 40:    switch (cmd) {
 [v _motorsToggled `uc ~T0 @X0 1 a ]
 [e = _motorsToggled -> -> 0 `i `uc ]
 "41
 [; ;main.c: 41: 
-[v _tmri `us ~T0 @X0 1 a ]
-"42
-[; ;main.c: 42: 
-[v _tmrj `us ~T0 @X0 1 a ]
-"44
-[; ;main.c: 44:    case '?':
+[v _consecutiveReadings `uc ~T0 @X0 1 a ]
+[e = _consecutiveReadings -> -> 0 `i `uc ]
+"43
+[; ;main.c: 43: 
 [e ( _SYSTEM_Initialize ..  ]
-"46
-[; ;main.c: 46:                 printf("?: help menu\r\n");
+"45
+[; ;main.c: 45:    case '?':
 [e :U 836 ]
 {
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 835 ]
-"47
-[; ;main.c: 47:                 printf("o: k\r\n");
+"46
+[; ;main.c: 46:     printf("-------------------------------------------------\r\n");
 [e ( _EPWM1_LoadDutyValue (1 -> -> 255 `i `us ]
-"48
-[; ;main.c: 48:                 printf("Z: Reset processor.\r\n");
+"47
+[; ;main.c: 47:                 printf("?: help menu\r\n");
 [e ( _EPWM2_LoadDutyValue (1 -> -> 255 `i `us ]
-"50
-[; ;main.c: 50:                 printf("t: Toggle motors.\r\n");
+"49
+[; ;main.c: 49:                 printf("Z: Reset processor.\r\n");
 [e ( _printf :s 1C ]
-"51
-[; ;main.c: 51:                 printf("r: Read rangefinder value.\r\n");
+"50
+[; ;main.c: 50:                 printf("z: Clear the terminal.\r\n");
 [e ( _printf :s 2C ]
-"52
-[; ;main.c: 52:                 printf("c: Test timer period.\r\n");
+"51
+[; ;main.c: 51:                 printf("t: Toggle motors.\r\n");
 [e ( _printf :s 3C ]
-"53
-[; ;main.c: 53:                 printf("-------------------------------------------------\r\n");
+"52
+[; ;main.c: 52:                 printf("r: Read rangefinder value.\r\n");
 [e ( _printf :s 4C ]
+"55
+[; ;main.c: 55:     break;
+[e ( _IOCB4_SetInterruptHandler (1 &U _echoISR ]
 "56
 [; ;main.c: 56: 
-[e ( _IOCB4_SetInterruptHandler (1 &U _echoISR ]
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
 "57
 [; ;main.c: 57: 
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"58
-[; ;main.c: 58: 
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"60
-[; ;main.c: 60:                 printf("o:      ok\r\n");
+"59
+[; ;main.c: 59: 
 {
 [e :U 837 ]
 {
 "61
-[; ;main.c: 61:                 break;
-[e $ ! != -> ( _EUSART1_is_rx_ready ..  `i -> 0 `i 840  ]
+[; ;main.c: 61:                 printf("o:      ok\r\n");
+[e $ ! != -> 1 `i -> 0 `i 840  ]
 {
-"62
-[; ;main.c: 62: 
-[e = _cmd -> ( _EUSART1_Read ..  `uc ]
 "63
 [; ;main.c: 63: 
+[e = _cmd -> -> 65 `ui `uc ]
+"64
+[; ;main.c: 64: 
 [e $U 842  ]
 {
-"68
-[; ;main.c: 68:                 __asm("reset");
-[e :U 843 ]
 "69
-[; ;main.c: 69:                 break;
-[e ( _printf :s 5C ]
+[; ;main.c: 69:                 __asm("reset");
+[e :U 843 ]
 "70
-[; ;main.c: 70: 
-[e ( _printf :s 6C ]
+[; ;main.c: 70:                 break;
+[e ( _printf :s 5C ]
 "71
 [; ;main.c: 71: 
-[e ( _printf :s 7C ]
+[e ( _printf :s 6C ]
 "72
 [; ;main.c: 72: 
-[e ( _printf :s 8C ]
+[e ( _printf :s 7C ]
 "73
 [; ;main.c: 73: 
-[e ( _printf :s 9C ]
+[e ( _printf :s 8C ]
 "74
-[; ;main.c: 74:             case 'z':
-[e ( _printf :s 10C ]
+[; ;main.c: 74: 
+[e ( _printf :s 9C ]
 "75
-[; ;main.c: 75:                 for (i=0; i<40; i++) printf("\n");
-[e ( _printf :s 11C ]
+[; ;main.c: 75:             case 'z':
+[e ( _printf :s 10C ]
 "76
-[; ;main.c: 76:                 break;
-[e ( _printf :s 12C ]
+[; ;main.c: 76:                 for (i=0; i<40; i++) printf("\n");
+[e ( _printf :s 11C ]
 "77
-[; ;main.c: 77: 
-[e ( _printf :s 13C ]
+[; ;main.c: 77:                 break;
+[e ( _printf :s 12C ]
 "78
-[; ;main.c: 78:             case 't':
+[; ;main.c: 78: 
+[e ( _printf :s 13C ]
+"79
+[; ;main.c: 79:             case 't':
 [e $U 841  ]
-"83
-[; ;main.c: 83:                 } else {
-[e :U 844 ]
 "84
-[; ;main.c: 84:                     motorsToggled = 1;
-[e ( _printf :s 14C ]
+[; ;main.c: 84:                 } else {
+[e :U 844 ]
 "85
-[; ;main.c: 85:                     do { LATBbits.LATB6 = 1; } while(0);
+[; ;main.c: 85:                     motorsToggled = 1;
+[e ( _printf :s 14C ]
+"86
+[; ;main.c: 86:                     goForward();
 [e $U 841  ]
-"90
-[; ;main.c: 90:                     EPWM1_LoadDutyValue(128);
-[e :U 845 ]
 "91
-[; ;main.c: 91:                     EPWM2_LoadDutyValue(128);
+[; ;main.c: 91:                 }
+[e :U 845 ]
+"92
+[; ;main.c: 92: 
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 40 `i 846  ]
@@ -1009,17 +1010,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < -> _i `i -> 40 `i 846  ]
 [e :U 847 ]
 }
-"92
-[; ;main.c: 92:                     printf("Motors toggled on.\r\n");
-[; <" reset ;# ">
 "93
-[; ;main.c: 93:                 }
+[; ;main.c: 93:                 break;
+[; <" reset ;# ">
+"94
+[; ;main.c: 94: 
 [e $U 841  ]
-"98
-[; ;main.c: 98: 
-[e :U 849 ]
 "99
-[; ;main.c: 99:                 do { LATAbits.LATA5 = 1; } while(0);
+[; ;main.c: 99:                 TMR0_WriteTimer(0x10000 - 10);
+[e :U 849 ]
+"100
+[; ;main.c: 100:                 while(INTCONbits.TMR0IF == 0);
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 40 `i 850  ]
@@ -1030,186 +1031,268 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < -> _i `i -> 40 `i 850  ]
 [e :U 851 ]
 }
-"100
-[; ;main.c: 100:                 INTCONbits.TMR0IF = 0;
+"101
+[; ;main.c: 101:                 do { LATAbits.LATA5 = 0; } while(0);
 [e $U 841  ]
-"102
-[; ;main.c: 102:                 while(INTCONbits.TMR0IF == 0);
-[e :U 853 ]
 "103
-[; ;main.c: 103:                 do { LATAbits.LATA5 = 0; } while(0);
-[e $ ! != -> _motorsToggled `i -> 0 `i 854  ]
-{
+[; ;main.c: 103:                 printf("Distance = %u\r\n", distance);
+[e :U 853 ]
 "104
 [; ;main.c: 104: 
-[e = _motorsToggled -> -> 0 `i `uc ]
+[e $ ! != -> _motorsToggled `i -> 0 `i 854  ]
+{
 "105
-[; ;main.c: 105:                 printf("Distance = %u\r\n", distance);
+[; ;main.c: 105:                 break;
+[e = _motorsToggled -> -> 0 `i `uc ]
+"106
+[; ;main.c: 106: 
 [e :U 857 ]
 {
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 856 ]
-"106
-[; ;main.c: 106: 
-[e ( _printf :s 17C ]
 "107
-[; ;main.c: 107:                 break;
+[; ;main.c: 107:             case 'c':
+[e ( _printf :s 17C ]
+"108
+[; ;main.c: 108:                 printf("Entering one-second delay...\r\n");
 }
 [e $U 858  ]
 [e :U 854 ]
 {
-"108
-[; ;main.c: 108: 
-[e = _motorsToggled -> -> 1 `i `uc ]
 "109
-[; ;main.c: 109:             case 'c':
-[e :U 861 ]
-{
-[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
-}
-[e :U 860 ]
+[; ;main.c: 109:                 quarterSecondDelay();
+[e = _motorsToggled -> -> 1 `i `uc ]
 "110
-[; ;main.c: 110:                 printf("Entering one-second delay...\r\n");
-[e :U 864 ]
-{
-[e = . . _LATBbits 0 7 -> -> 0 `i `uc ]
-}
-[e :U 863 ]
+[; ;main.c: 110:                 quarterSecondDelay();
+[e ( _goForward ..  ]
 "111
-[; ;main.c: 111:                 for(tmri = 0; tmri<316; tmri++) {
-[e :U 867 ]
-{
-[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
-}
-[e :U 866 ]
-"112
-[; ;main.c: 112:                     for(tmrj = 0; tmrj<316; tmrj++) {
-[e :U 870 ]
-{
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 869 ]
-"113
-[; ;main.c: 113:                         INTCONbits.TMR0IF = 0;
-[e :U 873 ]
+[; ;main.c: 111:                 quarterSecondDelay();
+[e :U 861 ]
 {
 [e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 872 ]
-"114
-[; ;main.c: 114:                         TMR0_WriteTimer(0x10000 - 10);
+[e :U 860 ]
+"112
+[; ;main.c: 112:                 quarterSecondDelay();
 [e ( _EPWM1_LoadDutyValue (1 -> -> 128 `i `us ]
-"115
-[; ;main.c: 115:                         while(INTCONbits.TMR0IF == 0);
+"113
+[; ;main.c: 113:                 printf("Exited delay.\r\n");
 [e ( _EPWM2_LoadDutyValue (1 -> -> 128 `i `us ]
-"116
-[; ;main.c: 116:                     }
+"114
+[; ;main.c: 114:                 break;
 [e ( _printf :s 18C ]
-"117
-[; ;main.c: 117:                 }
+"115
+[; ;main.c: 115: 
 }
 [e :U 858 ]
-"119
-[; ;main.c: 119:                 break;
+"117
+[; ;main.c: 117:                 do { LATAbits.LATA0 = 0; } while(0);
 [e $U 841  ]
+"119
+[; ;main.c: 119:                 EPWM2_LoadDutyValue(200);
+[e :U 862 ]
 "121
-[; ;main.c: 121: 
-[e :U 874 ]
-"123
-[; ;main.c: 123: 
-[e :U 877 ]
+[; ;main.c: 121:                 while(1) {
+[e :U 865 ]
 {
 [e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
 }
-[e :U 876 ]
-"124
-[; ;main.c: 124:    default:
+[e :U 864 ]
+"122
+[; ;main.c: 122: 
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"125
-[; ;main.c: 125:     printf("Unknown key %c\r\n",cmd);
+"123
+[; ;main.c: 123:                     do { LATAbits.LATA5 = 1; } while(0);
 [e ( _TMR0_WriteTimer (1 -> - -> 65536 `l -> -> 10 `i `l `us ]
-"126
-[; ;main.c: 126:     break;
-[e $U 878  ]
-[e :U 879 ]
-[e :U 878 ]
-[e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 879  ]
-[e :U 880 ]
-"127
-[; ;main.c: 127:    }
-[e :U 883 ]
+"124
+[; ;main.c: 124:                     INTCONbits.TMR0IF = 0;
+[e $U 866  ]
+[e :U 867 ]
+[e :U 866 ]
+[e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 867  ]
+[e :U 868 ]
+"125
+[; ;main.c: 125:                     TMR0_WriteTimer(0x10000 - 10);
+[e :U 871 ]
 {
 [e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
 }
-[e :U 882 ]
-"129
-[; ;main.c: 129:   }
+[e :U 870 ]
+"127
+[; ;main.c: 127:                     do { LATAbits.LATA5 = 0; } while(0);
 [e ( _printf , (. :s 19C -> _distance `ui ]
-"131
-[; ;main.c: 131: }
+"129
+[; ;main.c: 129:                     if (distance <= 1800){
 [e $U 841  ]
+"131
+[; ;main.c: 131:                     } else {
+[e :U 872 ]
+"132
+[; ;main.c: 132:                         consecutiveReadings = 0;
+[e ( _printf :s 20C ]
 "133
-[; ;main.c: 133: void echoISR(void) {
-[e :U 884 ]
+[; ;main.c: 133:                     }
+[e ( _quarterSecondDelay ..  ]
 "134
 [; ;main.c: 134: 
-[e ( _printf :s 20C ]
+[e ( _quarterSecondDelay ..  ]
 "135
-[; ;main.c: 135: 
-{
-[e = _tmri -> -> 0 `i `us ]
-[e $ < -> _tmri `ui -> -> 316 `i `ui 885  ]
-[e $U 886  ]
-[e :U 885 ]
-{
+[; ;main.c: 135:                     if (consecutiveReadings >= 3) {
+[e ( _quarterSecondDelay ..  ]
 "136
-[; ;main.c: 136:     if (PORTBbits.RB4) {
+[; ;main.c: 136:                         do { LATAbits.LATA0 = 0; } while(0);
+[e ( _quarterSecondDelay ..  ]
+"137
+[; ;main.c: 137:                         goCCW();
+[e ( _printf :s 21C ]
+"138
+[; ;main.c: 138:                         do { LATAbits.LATA0 = 1; } while(0);
+[e $U 841  ]
+"140
+[; ;main.c: 140:                         quarterSecondDelay();
+[e :U 873 ]
+"141
+[; ;main.c: 141:                     } else {
+[e :U 876 ]
 {
-[e = _tmrj -> -> 0 `i `us ]
-[e $ < -> _tmrj `ui -> -> 316 `i `ui 888  ]
-[e $U 889  ]
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 875 ]
+"142
+[; ;main.c: 142:                         do { LATAbits.LATA0 = 0; } while(0);
+[e ( _EPWM1_LoadDutyValue (1 -> -> 200 `i `us ]
+"143
+[; ;main.c: 143:                         goForward();
+[e ( _EPWM2_LoadDutyValue (1 -> -> 200 `i `us ]
+"145
+[; ;main.c: 145:                     }
+[e :U 878 ]
+{
+"147
+[; ;main.c: 147:                     quarterSecondDelay();
+[e :U 882 ]
+{
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+}
+[e :U 881 ]
+"148
+[; ;main.c: 148: 
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"149
+[; ;main.c: 149:                 }
+[e ( _TMR0_WriteTimer (1 -> - -> 65536 `l -> -> 10 `i `l `us ]
+"150
+[; ;main.c: 150: 
+[e $U 883  ]
+[e :U 884 ]
+[e :U 883 ]
+[e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 884  ]
+[e :U 885 ]
+"151
+[; ;main.c: 151: 
 [e :U 888 ]
 {
-"137
-[; ;main.c: 137:         start = TMR0_ReadTimer();
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"138
-[; ;main.c: 138:     } else {
-[e ( _TMR0_WriteTimer (1 -> - -> 65536 `l -> -> 10 `i `l `us ]
-"139
-[; ;main.c: 139:         end = TMR0_ReadTimer();
-[e $U 891  ]
-[e :U 892 ]
-[e :U 891 ]
-[e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 892  ]
-[e :U 893 ]
-"140
-[; ;main.c: 140:         distance = end - start;
+[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
 }
-[e ++ _tmrj -> -> 1 `i `us ]
-[e $ < -> _tmrj `ui -> -> 316 `i `ui 888  ]
+[e :U 887 ]
+"153
+[; ;main.c: 153: 
+[e $ ! <= -> _distance `ui -> -> 1800 `i `ui 889  ]
+{
+"154
+[; ;main.c: 154: 
+[e =+ _consecutiveReadings -> -> 1 `i `uc ]
+"155
+[; ;main.c: 155: 
+}
+[e $U 890  ]
 [e :U 889 ]
+{
+"156
+[; ;main.c: 156: 
+[e = _consecutiveReadings -> -> 0 `i `uc ]
+"157
+[; ;main.c: 157:    default:
 }
-"141
-[; ;main.c: 141:     }
-}
-[e ++ _tmri -> -> 1 `i `us ]
-[e $ < -> _tmri `ui -> -> 316 `i `ui 885  ]
-[e :U 886 ]
-}
-"142
-[; ;main.c: 142: }
-[e ( _printf :s 21C ]
-"143
-[e $U 841  ]
-"148
+[e :U 890 ]
+"159
+[; ;main.c: 159:     break;
+[e $ ! >= -> _consecutiveReadings `i -> 3 `i 891  ]
+{
+"160
+[; ;main.c: 160:    }
 [e :U 894 ]
-"149
-[e ( _printf , (. :s 22C -> _cmd `i ]
-"150
+{
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 893 ]
+"161
+[; ;main.c: 161: 
+[e ( _goCCW ..  ]
+"162
+[; ;main.c: 162:   }
+[e :U 897 ]
+{
+[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
+}
+[e :U 896 ]
+"163
+[; ;main.c: 163:     }
+[e ( _quarterSecondDelay ..  ]
+"164
+[; ;main.c: 164: }
+[e ( _quarterSecondDelay ..  ]
+"165
+[; ;main.c: 165: 
+}
+[e $U 898  ]
+[e :U 891 ]
+{
+"166
+[; ;main.c: 166: void echoISR(void) {
+[e :U 901 ]
+{
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 900 ]
+"167
+[; ;main.c: 167: 
+[e ( _goForward ..  ]
+"168
+[; ;main.c: 168: 
+[e :U 904 ]
+{
+[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
+}
+[e :U 903 ]
+"169
+[; ;main.c: 169:     if (PORTBbits.RB4) {
+}
+[e :U 898 ]
+"171
+[; ;main.c: 171:     } else {
+[e ( _quarterSecondDelay ..  ]
+"173
+[; ;main.c: 173:         distance = end - start;
+}
+[e :U 877 ]
+[e $U 878  ]
+[e :U 879 ]
+"176
+[; ;main.c: 176: 
 [e $U 841  ]
-"151
+"181
+[; ;main.c: 181:     do { LATAbits.LATA1 = 0; } while(0);
+[e :U 905 ]
+"182
+[; ;main.c: 182: }
+[e ( _printf , (. :s 22C -> _cmd `i ]
+"183
+[; ;main.c: 183: 
+[e $U 841  ]
+"184
+[; ;main.c: 184: void goCCW(void) {
 }
 [e $U 841  ]
 [e :U 842 ]
@@ -1218,45 +1301,168 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 90 `ui `i 845
  , $ -> -> 122 `ui `i 849
  , $ -> -> 116 `ui `i 853
- , $ -> -> 114 `ui `i 874
- , $ -> -> 99 `ui `i 884
- 894 ]
+ , $ -> -> 114 `ui `i 862
+ , $ -> -> 99 `ui `i 872
+ , $ -> -> 65 `ui `i 873
+ 905 ]
 [e :U 841 ]
-"153
+"186
+[; ;main.c: 186:     do { LATBbits.LATB7 = 0; } while(0);
 }
 [e :U 840 ]
-"154
+"187
+[; ;main.c: 187:     do { LATBbits.LATB5 = 0; } while(0);
 }
 [e $U 837  ]
 [e :U 838 ]
 }
-"155
+"188
+[; ;main.c: 188:     do { LATAbits.LATA1 = 1; } while(0);
 [e :UE 833 ]
 }
-"157
+"190
+[; ;main.c: 190: 
 [v _echoISR `(v ~T0 @X0 1 ef ]
 {
 [e :U _echoISR ]
 [f ]
-"160
-[e $ ! != -> . . _PORTBbits 0 4 `i -> 0 `i 896  ]
+"193
+[; ;main.c: 193:     for(tmri = 0; tmri<158; tmri++) {
+[e $ ! != -> . . _PORTBbits 0 4 `i -> 0 `i 907  ]
 {
-"161
+"194
+[; ;main.c: 194:         for(tmrj = 0; tmrj<158; tmrj++) {
 [e = _start ( _TMR0_ReadTimer ..  ]
-"162
+"195
+[; ;main.c: 195:             INTCONbits.TMR0IF = 0;
 }
-[e $U 897  ]
-[e :U 896 ]
+[e $U 908  ]
+[e :U 907 ]
 {
-"163
+"196
+[; ;main.c: 196:             TMR0_WriteTimer(0x10000 - 10);
 [e = _end ( _TMR0_ReadTimer ..  ]
-"164
+"197
+[; ;main.c: 197:             while(INTCONbits.TMR0IF == 0);
 [e = _distance -> - -> _end `ui -> _start `ui `us ]
-"165
+"198
+[; ;main.c: 198:         }
 }
-[e :U 897 ]
-"166
-[e :UE 895 ]
+[e :U 908 ]
+"199
+[; ;main.c: 199:     }
+[e :UE 906 ]
+}
+"201
+[v _goForward `(v ~T0 @X0 1 ef ]
+{
+[e :U _goForward ]
+[f ]
+"202
+[e :U 912 ]
+{
+[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
+}
+[e :U 911 ]
+"203
+[e :U 915 ]
+{
+[e = . . _LATBbits 0 7 -> -> 0 `i `uc ]
+}
+[e :U 914 ]
+"204
+[e :U 918 ]
+{
+[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
+}
+[e :U 917 ]
+"205
+[e :U 921 ]
+{
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+}
+[e :U 920 ]
+"206
+[e :UE 909 ]
+}
+"208
+[v _goCCW `(v ~T0 @X0 1 ef ]
+{
+[e :U _goCCW ]
+[f ]
+"209
+[e :U 925 ]
+{
+[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
+}
+[e :U 924 ]
+"210
+[e :U 928 ]
+{
+[e = . . _LATBbits 0 7 -> -> 0 `i `uc ]
+}
+[e :U 927 ]
+"211
+[e :U 931 ]
+{
+[e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
+}
+[e :U 930 ]
+"212
+[e :U 934 ]
+{
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
+}
+[e :U 933 ]
+"213
+[e :UE 922 ]
+}
+"215
+[v _quarterSecondDelay `(v ~T0 @X0 1 ef ]
+{
+[e :U _quarterSecondDelay ]
+[f ]
+"216
+[v _tmri `us ~T0 @X0 1 a ]
+[v _tmrj `us ~T0 @X0 1 a ]
+"217
+{
+[e = _tmri -> -> 0 `i `us ]
+[e $ < -> _tmri `ui -> -> 158 `i `ui 936  ]
+[e $U 937  ]
+[e :U 936 ]
+{
+"218
+{
+[e = _tmrj -> -> 0 `i `us ]
+[e $ < -> _tmrj `ui -> -> 158 `i `ui 939  ]
+[e $U 940  ]
+[e :U 939 ]
+{
+"219
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"220
+[e ( _TMR0_WriteTimer (1 -> - -> 65536 `l -> -> 10 `i `l `us ]
+"221
+[e $U 942  ]
+[e :U 943 ]
+[e :U 942 ]
+[e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 943  ]
+[e :U 944 ]
+"222
+}
+[e ++ _tmrj -> -> 1 `i `us ]
+[e $ < -> _tmrj `ui -> -> 158 `i `ui 939  ]
+[e :U 940 ]
+}
+"223
+}
+[e ++ _tmri -> -> 1 `i `us ]
+[e $ < -> _tmri `ui -> -> 158 `i `ui 936  ]
+[e :U 937 ]
+}
+"224
+[e :UE 935 ]
 }
 [p f _printf 8913920 ]
 [a 4C 13 10 62 32 0 ]

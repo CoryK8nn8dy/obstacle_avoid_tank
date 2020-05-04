@@ -51,8 +51,14 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "37 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"157
+"190
 [v _echoISR echoISR `(v  1 e 1 0 ]
+"201
+[v _goForward goForward `(v  1 e 1 0 ]
+"208
+[v _goCCW goCCW `(v  1 e 1 0 ]
+"215
+[v _quarterSecondDelay quarterSecondDelay `(v  1 e 1 0 ]
 "64 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm1.c
 [v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 1 0 ]
 "90
@@ -63,8 +69,6 @@
 [v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 1 0 ]
 "66 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
-"99
-[v _EUSART1_is_rx_ready EUSART1_is_rx_ready `(a  1 e 1 0 ]
 "113
 [v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
 "132
@@ -160,7 +164,7 @@
 [v _CCPR2L CCPR2L `VEuc  1 e 1 @3943 ]
 "3275
 [v _CCPR2H CCPR2H `VEuc  1 e 1 @3944 ]
-[s S967 . 1 `uc 1 RB0 1 0 :1:0 
+[s S937 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -170,7 +174,7 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "6553
-[s S976 . 1 `uc 1 INT0 1 0 :1:0 
+[s S946 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 CCP2 1 0 :1:3 
@@ -179,7 +183,7 @@
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S985 . 1 `uc 1 AN12 1 0 :1:0 
+[s S955 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -188,7 +192,7 @@
 `uc 1 TX2 1 0 :1:6 
 `uc 1 RX2 1 0 :1:7 
 ]
-[s S994 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S964 . 1 `uc 1 FLT0 1 0 :1:0 
 `uc 1 C12IN3M 1 0 :1:1 
 `uc 1 P1B 1 0 :1:2 
 `uc 1 C12IN2M 1 0 :1:3 
@@ -197,7 +201,7 @@
 `uc 1 CK2 1 0 :1:6 
 `uc 1 DT2 1 0 :1:7 
 ]
-[s S1003 . 1 `uc 1 SRI 1 0 :1:0 
+[s S973 . 1 `uc 1 SRI 1 0 :1:0 
 `uc 1 C12IN3N 1 0 :1:1 
 `uc 1 CTED1 1 0 :1:2 
 `uc 1 C12IN2N 1 0 :1:3 
@@ -206,34 +210,34 @@
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S1012 . 1 `uc 1 CCP4 1 0 :1:0 
+[s S982 . 1 `uc 1 CCP4 1 0 :1:0 
 `uc 1 P1C 1 0 :1:1 
 `uc 1 SDA2 1 0 :1:2 
 `uc 1 CTED2 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 T3CKI 1 0 :1:5 
 ]
-[s S1019 . 1 `uc 1 SS2 1 0 :1:0 
+[s S989 . 1 `uc 1 SS2 1 0 :1:0 
 `uc 1 SCL2 1 0 :1:1 
 `uc 1 SDI2 1 0 :1:2 
 `uc 1 P2A 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 P3A 1 0 :1:5 
 ]
-[s S1026 . 1 `uc 1 NOT_SS2 1 0 :1:0 
+[s S996 . 1 `uc 1 NOT_SS2 1 0 :1:0 
 ]
-[s S1028 . 1 `uc 1 nSS2 1 0 :1:0 
+[s S998 . 1 `uc 1 nSS2 1 0 :1:0 
 `uc 1 SCK2 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SDO2 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 P2B 1 0 :1:5 
 ]
-[s S1035 . 1 `uc 1 . 1 0 :3:0 
+[s S1005 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S1038 . 1 `S967 1 . 1 0 `S976 1 . 1 0 `S985 1 . 1 0 `S994 1 . 1 0 `S1003 1 . 1 0 `S1012 1 . 1 0 `S1019 1 . 1 0 `S1026 1 . 1 0 `S1028 1 . 1 0 `S1035 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES1038  1 e 1 @3969 ]
+[u S1008 . 1 `S937 1 . 1 0 `S946 1 . 1 0 `S955 1 . 1 0 `S964 1 . 1 0 `S973 1 . 1 0 `S982 1 . 1 0 `S989 1 . 1 0 `S996 1 . 1 0 `S998 1 . 1 0 `S1005 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1008  1 e 1 @3969 ]
 "7244
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
 [s S844 . 1 `uc 1 LATA0 1 0 :1:0 
@@ -259,7 +263,7 @@
 [v _LATAbits LATAbits `VES862  1 e 1 @3977 ]
 "7356
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
-[s S926 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S1092 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -269,7 +273,7 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "7383
-[s S935 . 1 `uc 1 LB0 1 0 :1:0 
+[s S1101 . 1 `uc 1 LB0 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 `uc 1 LB2 1 0 :1:2 
 `uc 1 LB3 1 0 :1:3 
@@ -278,8 +282,8 @@
 `uc 1 LB6 1 0 :1:6 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S944 . 1 `S926 1 . 1 0 `S935 1 . 1 0 ]
-[v _LATBbits LATBbits `VES944  1 e 1 @3978 ]
+[u S1110 . 1 `S1092 1 . 1 0 `S1101 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1110  1 e 1 @3978 ]
 "7468
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
 "7580
@@ -469,22 +473,22 @@
 [v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
 "15011
 [v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
-[s S1196 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S1209 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "15074
-[s S1198 . 1 `uc 1 . 1 0 :1:0 
+[s S1211 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
-[s S1201 . 1 `uc 1 . 1 0 :2:0 
+[s S1214 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
-[s S1204 . 1 `uc 1 . 1 0 :3:0 
+[s S1217 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
-[s S1207 . 1 `uc 1 . 1 0 :4:0 
+[s S1220 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
-[s S1210 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S1223 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -493,14 +497,14 @@
 `uc 1 SBOREN 1 0 :1:6 
 `uc 1 IPEN 1 0 :1:7 
 ]
-[s S1219 . 1 `uc 1 BOR 1 0 :1:0 
+[s S1232 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
 `uc 1 RI 1 0 :1:4 
 ]
-[u S1225 . 1 `S1196 1 . 1 0 `S1198 1 . 1 0 `S1201 1 . 1 0 `S1204 1 . 1 0 `S1207 1 . 1 0 `S1210 1 . 1 0 `S1219 1 . 1 0 ]
-[v _RCONbits RCONbits `VES1225  1 e 1 @4048 ]
+[u S1238 . 1 `S1209 1 . 1 0 `S1211 1 . 1 0 `S1214 1 . 1 0 `S1217 1 . 1 0 `S1220 1 . 1 0 `S1223 1 . 1 0 `S1232 1 . 1 0 ]
+[v _RCONbits RCONbits `VES1238  1 e 1 @4048 ]
 "15192
 [v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
 "15249
@@ -607,17 +611,27 @@
 "37 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"42
-[v main@tmrj tmrj `us  1 a 2 39 ]
-"41
-[v main@tmri tmri `us  1 a 2 37 ]
 "39
-[v main@i i `uc  1 a 1 41 ]
-"38
-[v main@cmd cmd `uc  1 a 1 36 ]
+[v main@i i `uc  1 a 1 38 ]
+"41
+[v main@consecutiveReadings consecutiveReadings `uc  1 a 1 36 ]
 "40
 [v main@motorsToggled motorsToggled `uc  1 a 1 35 ]
-"155
+"188
+} 0
+"215
+[v _quarterSecondDelay quarterSecondDelay `(v  1 e 1 0 ]
+{
+"216
+[v quarterSecondDelay@tmrj tmrj `us  1 a 2 14 ]
+[v quarterSecondDelay@tmri tmri `us  1 a 2 12 ]
+"224
+} 0
+"115 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr0.c
+[v _TMR0_WriteTimer TMR0_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR0_WriteTimer@timerVal timerVal `us  1 p 2 10 ]
+"120
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -633,9 +647,9 @@
 {
 "1371
 [v vfprintf@cfmt cfmt `*.32uc  1 a 2 71 ]
-[s S1306 _IO_FILE 0 ]
+[s S1319 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.2S1306  1 p 2 19 ]
+[v vfprintf@fp fp `*.2S1319  1 p 2 19 ]
 [v vfprintf@fmt fmt `*.32Cuc  1 p 2 21 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 23 ]
 "1382
@@ -647,9 +661,9 @@
 [v vfpfcnvrt@llu llu `uo  1 a 8 10 ]
 "672
 [v vfpfcnvrt@c c `uc  1 a 1 18 ]
-[s S1306 _IO_FILE 0 ]
+[s S1319 _IO_FILE 0 ]
 "670
-[v vfpfcnvrt@fp fp `*.2S1306  1 p 2 0 ]
+[v vfpfcnvrt@fp fp `*.2S1319  1 p 2 0 ]
 [v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 2 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 4 ]
 "1365
@@ -663,9 +677,9 @@
 [v utoa@i i `i  1 a 2 69 ]
 [v utoa@w w `i  1 a 2 59 ]
 [v utoa@p p `i  1 a 2 57 ]
-[s S1306 _IO_FILE 0 ]
+[s S1319 _IO_FILE 0 ]
 "593
-[v utoa@fp fp `*.2S1306  1 p 2 39 ]
+[v utoa@fp fp `*.2S1319  1 p 2 39 ]
 [v utoa@d d `uo  1 p 8 41 ]
 "619
 } 0
@@ -696,9 +710,9 @@
 {
 "261
 [v ctoa@w w `i  1 a 2 42 ]
-[s S1306 _IO_FILE 0 ]
+[s S1319 _IO_FILE 0 ]
 "259
-[v ctoa@fp fp `*.2S1306  1 p 2 39 ]
+[v ctoa@fp fp `*.2S1319  1 p 2 39 ]
 [v ctoa@c c `uc  1 p 1 41 ]
 "270
 } 0
@@ -708,9 +722,9 @@
 "74
 [v pad@w w `i  1 a 2 37 ]
 [v pad@i i `i  1 a 2 35 ]
-[s S1306 _IO_FILE 0 ]
+[s S1319 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.2S1306  1 p 2 28 ]
+[v pad@fp fp `*.2S1319  1 p 2 28 ]
 [v pad@buf buf `*.39uc  1 p 2 30 ]
 [v pad@p p `i  1 p 2 32 ]
 "95
@@ -733,16 +747,16 @@
 [v fputs@c c `uc  1 a 1 25 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 21 ]
-[s S1811 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.2S1811  1 p 2 23 ]
+[s S1824 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.2S1824  1 p 2 23 ]
 "19
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 12 ]
-[s S1811 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.2S1811  1 p 2 14 ]
+[s S1824 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S1824  1 p 2 14 ]
 "21
 } 0
 "146 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/eusart1.c
@@ -762,11 +776,15 @@
 [v EUSART1_Write@txData txData `uc  1 a 1 10 ]
 "139
 } 0
-"115 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr0.c
-[v _TMR0_WriteTimer TMR0_WriteTimer `(v  1 e 1 0 ]
+"201 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\main.c
+[v _goForward goForward `(v  1 e 1 0 ]
 {
-[v TMR0_WriteTimer@timerVal timerVal `us  1 p 2 10 ]
-"120
+"206
+} 0
+"208
+[v _goCCW goCCW `(v  1 e 1 0 ]
+{
+"213
 } 0
 "50 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -842,16 +860,6 @@
 {
 "88
 } 0
-"99 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/eusart1.c
-[v _EUSART1_is_rx_ready EUSART1_is_rx_ready `(a  1 e 1 0 ]
-{
-"102
-} 0
-"113
-[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
-{
-"130
-} 0
 "90 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/epwm2.c
 [v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 1 0 ]
 {
@@ -884,10 +892,10 @@
 {
 "142
 } 0
-"157 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\main.c
+"190 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\main.c
 [v _echoISR echoISR `(v  1 e 1 0 ]
 {
-"166
+"199
 } 0
 "102 C:\Users\k3nn3\Cory\obstacle_avoid_tank\finalproject.X\mcc_generated_files/tmr0.c
 [v _TMR0_ReadTimer TMR0_ReadTimer `(us  1 e 2 0 ]
